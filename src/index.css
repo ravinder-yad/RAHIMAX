@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg-light: var(--bg-main);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-card: var(--bg-card);
+  --color-border-light: var(--border-main);
+  --color-text-dark: var(--text-main);
+  --color-text-gray: var(--text-muted);
+  --color-primary: var(--text-main);
+  --color-secondary: var(--primary-color);
+  --color-accent: #F59E0B;
+  --color-success: #22C55E;
+
+  --color-btn-primary-bg: var(--btn-primary-bg);
+  --color-btn-primary-hover: var(--btn-primary-hover);
+  --color-btn-primary-text: var(--btn-primary-text);
+
+  --color-btn-secondary-bg: var(--btn-secondary-bg);
+  --color-btn-secondary-border: var(--btn-secondary-border);
+  --color-btn-secondary-text: var(--btn-secondary-text);
+  --color-btn-secondary-hover: var(--btn-secondary-hover);
+
+  --font-body: 'Poppins', sans-serif;
+  --font-heading: 'Sora', sans-serif;
+  --font-button: 'Inter', sans-serif;
+}
+
+:root {
+  --bg-main: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --border-main: #E2E8F0;
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  --primary-color: #2563EB;
+  --hover-color: #3B82F6;
+
+  --btn-primary-bg: #0F172A;
+  --btn-primary-hover: #2563EB;
+  --btn-primary-text: #FFFFFF;
+
+  --btn-secondary-bg: #FFFFFF;
+  --btn-secondary-border: #E2E8F0;
+  --btn-secondary-text: #0F172A;
+  --btn-secondary-hover: #F8FAFC;
+}
+
+.dark {
+  --bg-main: #09090B;
+  --bg-surface: #111827;
+  --bg-card: #18181B;
+  --border-main: #27272A;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --primary-color: #2563EB;
+  --hover-color: #3B82F6;
+
+  --btn-primary-bg: #2563EB;
+  --btn-primary-hover: #3B82F6;
+  --btn-primary-text: #F8FAFC;
+
+  --btn-secondary-bg: rgba(24, 24, 27, 0.75);
+  --btn-secondary-border: #27272A;
+  --btn-secondary-text: #F8FAFC;
+  --btn-secondary-hover: #27272A;
+}
+
+/* Base Body Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sora', sans-serif;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+/* Inter for Buttons */
+button, .btn-font {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Glassmorphism Styles */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .glass-navbar {
+  background: rgba(9, 9, 11, 0.75);
+  border-bottom: 1px solid rgba(39, 39, 42, 0.8);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .glass-card {
+  background: rgba(24, 24, 27, 0.75);
+  border: 1px solid rgba(39, 39, 42, 0.6);
+}
+
+/* Premium Shadows & Hover States */
+.premium-shadow {
+  box-shadow: 0 10px 30px -15px rgba(15, 23, 42, 0.05),
+              0 1px 3px rgba(15, 23, 42, 0.02);
+}
+
+.dark .premium-shadow {
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5),
+              0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.premium-card-shadow {
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.05),
+              0 1px 4px rgba(15, 23, 42, 0.02);
+}
+
+.dark .premium-card-shadow {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6),
+              0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.premium-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.premium-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px -20px rgba(15, 23, 42, 0.12),
+              0 1px 8px rgba(15, 23, 42, 0.04);
+}
+
+.dark .premium-hover:hover {
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8),
+              0 0 30px -5px rgba(37, 99, 235, 0.15);
+}
+
+/* Logo Slider Animation */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-slider {
+  display: flex;
+  width: max-content;
+  animation: slide 25s linear infinite;
+}
+
+.animate-infinite-slider:hover {
+  animation-play-state: paused;
+}
+
+/* Lenis Smooth Scroll Configuration */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Global transitions */
+a, button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
