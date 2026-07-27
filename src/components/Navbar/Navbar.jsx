@@ -83,6 +83,18 @@ const Navbar = () => {
     return `/services/${slug}`;
   };
 
+  const getSolutionUrl = (item) => {
+    const name = item.toLowerCase();
+    if (name.includes('enterprise') || name.includes('ngo') || name.includes('corporate')) {
+      return '/solutions/corporate';
+    }
+    if (name.includes('ecommerce')) {
+      return '/solutions/ecommerce';
+    }
+    const slug = item.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    return `/solutions/${slug}`;
+  };
+
   const toggleDarkMode = () => {
     const nextDark = !darkMode;
     setDarkMode(nextDark);
@@ -317,14 +329,17 @@ const Navbar = () => {
                   }`}>
                     {/* Left: 2-column Solutions */}
                     <div className="col-span-8 space-y-4">
-                      <h4 className="font-heading font-extrabold text-[10px] text-primary uppercase tracking-wider border-b border-border-light pb-2">
+                      <Link 
+                        to="/solutions"
+                        className="font-heading font-extrabold text-[10px] text-primary uppercase tracking-wider border-b border-border-light pb-2 block hover:text-secondary transition-colors"
+                      >
                         Industry Solutions
-                      </h4>
+                      </Link>
                       <div className="grid grid-cols-2 gap-x-6 gap-y-3 normal-case tracking-normal">
                         {solutionsMenuData.map((sol, idx) => (
                           <Link 
                             key={idx} 
-                            to={getServiceUrl(sol)}
+                            to={getSolutionUrl(sol)}
                             className="text-xs text-text-gray hover:text-secondary hover:bg-slate-50 dark:hover:bg-bg-surface p-2.5 rounded-xl font-body font-semibold transition-colors flex items-center gap-2"
                           >
                             <CheckCircle className="w-3.5 h-3.5 text-secondary shrink-0" />
