@@ -275,55 +275,99 @@ const About = () => {
           </div>
 
         </div>
-      </section>
+          {/* 💎 SIGNATURE SECTION: Why We Started Rahimax with Premium Cards */}
+      <section className="py-28 bg-[#09090B] text-white text-left border-y border-zinc-900 px-6 relative overflow-hidden">
+        
+        {/* Internal Glow Mesh */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />
 
-      {/* 💎 SIGNATURE SECTION: Why We Started Rahimax with Premium Cards */}
-      <section className="py-24 bg-bg-surface dark:bg-slate-900 text-left border-b border-border-light dark:border-zinc-800 px-6 relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 px-3 py-1 bg-secondary/10 rounded-full inline-block border border-secondary/20">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <span className="text-blue-400 text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 px-3 py-1 bg-blue-500/10 rounded-full inline-block border border-blue-500/20">
               Brand Philosophy
             </span>
-            <h2 className="text-primary dark:text-white font-heading font-extrabold text-2xl md:text-3xl lg:text-4xl leading-tight">
+            <h2 className="text-white font-heading font-extrabold text-3xl md:text-4xl leading-tight">
               Why We Started Rahimax
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
             
-            <div className="p-8 bg-bg-card border border-border-light dark:bg-zinc-900/70 dark:border-zinc-800 rounded-[28px] shadow-lg flex flex-col justify-between hover:border-secondary/30 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
+            {/* Card 1: Our Purpose */}
+            <div className="p-8 bg-zinc-900/40 border border-zinc-800/80 rounded-[32px] shadow-lg flex flex-col justify-between hover:border-blue-500/30 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500" />
-              <div>
-                <span className="text-[10px] bg-secondary/10 text-secondary font-extrabold px-3 py-1 rounded-full uppercase tracking-wider block w-max mb-6">
+              <div className="space-y-4">
+                <span className="text-[10px] bg-blue-500/15 text-blue-400 font-extrabold px-3 py-1 rounded-full uppercase tracking-wider block w-max">
                   💡 Our Purpose
                 </span>
-                <p className="text-text-gray dark:text-zinc-300 font-body text-xs leading-relaxed">
-                  We built Rahimax to eliminate slow, generic template structures. We believe businesses deserve custom react code-bases built for speed and engineered specifically to scale.
+                <h4 className="font-heading font-black text-sm text-white">
+                  Killing slow page builders and heavy template codes.
+                </h4>
+                <p className="text-zinc-400 font-body text-[11px] leading-relaxed">
+                  We believe businesses deserve custom react code-bases built for speed and engineered specifically to scale, rather than generic heavy drag-and-drop elements that destroy your Google SEO authority rankings.
                 </p>
+                <ul className="space-y-2 pt-4 border-t border-zinc-800/60">
+                  <li className="flex items-center gap-2 text-[10px] text-zinc-300 font-semibold">
+                    <Check className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                    <span>100% bespoke hand-coded React elements</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-[10px] text-zinc-300 font-semibold">
+                    <Check className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                    <span>Accelerating page load speed index under 1.5s</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <div className="p-8 bg-bg-card border border-border-light dark:bg-zinc-900/70 dark:border-zinc-800 rounded-[28px] shadow-lg flex flex-col justify-between hover:border-secondary/30 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
+            {/* Card 2: Our Promise */}
+            <div className="p-8 bg-zinc-900/40 border border-zinc-800/80 rounded-[32px] shadow-lg flex flex-col justify-between hover:border-indigo-500/30 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500" />
-              <div>
-                <span className="text-[10px] bg-secondary/10 text-secondary font-extrabold px-3 py-1 rounded-full uppercase tracking-wider block w-max mb-6">
+              <div className="space-y-4">
+                <span className="text-[10px] bg-indigo-500/15 text-indigo-400 font-extrabold px-3 py-1 rounded-full uppercase tracking-wider block w-max">
                   🎯 Our Promise
                 </span>
-                <p className="text-text-gray dark:text-zinc-300 font-body text-xs leading-relaxed">
-                  We promise absolute transparency. No hidden charges, zero template overrides, high-grade security configurations, and live Zoom training after every product delivery.
+                <h4 className="font-heading font-black text-sm text-white">
+                  Absolute transparency and zero template overrides.
+                </h4>
+                <p className="text-zinc-400 font-body text-[11px] leading-relaxed">
+                  No hidden hosting licenses, no sudden setup surcharges. We promise clean secure architectures, daily repository backup reports, and full ownership of your custom source code files.
                 </p>
+                <ul className="space-y-2 pt-4 border-t border-zinc-800/60">
+                  <li className="flex items-center gap-2 text-[10px] text-zinc-300 font-semibold">
+                    <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                    <span>Fixed pricing models and clear contracts</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-[10px] text-zinc-300 font-semibold">
+                    <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                    <span>100% complete source code ownership</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <div className="p-8 bg-bg-card border border-border-light dark:bg-zinc-900/70 dark:border-zinc-800 rounded-[28px] shadow-lg flex flex-col justify-between hover:border-secondary/30 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
+            {/* Card 3: Our Future */}
+            <div className="p-8 bg-zinc-900/40 border border-zinc-800/80 rounded-[32px] shadow-lg flex flex-col justify-between hover:border-purple-500/30 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500" />
-              <div>
-                <span className="text-[10px] bg-secondary/10 text-secondary font-extrabold px-3 py-1 rounded-full uppercase tracking-wider block w-max mb-6">
+              <div className="space-y-4">
+                <span className="text-[10px] bg-purple-500/15 text-purple-400 font-extrabold px-3 py-1 rounded-full uppercase tracking-wider block w-max">
                   🚀 Our Future
                 </span>
-                <p className="text-text-gray dark:text-zinc-300 font-body text-xs leading-relaxed">
-                  Our goal is to scale our engineering studio to handle large-scale global enterprise ERP architectures while maintaining our boutique studio care and layout simplicity.
+                <h4 className="font-heading font-black text-sm text-white">
+                  Scaling custom ERP and database clusters globally.
+                </h4>
+                <p className="text-zinc-400 font-body text-[11px] leading-relaxed">
+                  Our goal is to scale our engineering studio to handle large-scale global enterprise systems and Clinic database networks while maintaining our boutique studio care and layout simplicity.
                 </p>
+                <ul className="space-y-2 pt-4 border-t border-zinc-800/60">
+                  <li className="flex items-center gap-2 text-[10px] text-zinc-300 font-semibold">
+                    <Check className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                    <span>Worldwide client deliveries across India & GCC</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-[10px] text-zinc-300 font-semibold">
+                    <Check className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                    <span>Automated API system pipelines & hosting tools</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
