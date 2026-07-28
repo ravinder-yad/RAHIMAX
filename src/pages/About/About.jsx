@@ -562,34 +562,44 @@ const About = () => {
         </div>
       </section>
 
-      {/* ⑧ Development Process with glowing index */}
-      <section className="py-24 bg-bg-light dark:bg-slate-950 px-6 text-left border-b border-border-light dark:border-zinc-800">
-        <div className="max-w-7xl mx-auto">
+      {/* ⑧ Development Process with glowing index (Operations Flow) */}
+      <section className="py-24 bg-bg-light dark:bg-slate-950 px-6 text-left border-b border-border-light dark:border-zinc-800 relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full bg-secondary/5 dark:bg-secondary/10 blur-[120px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 px-3 py-1 bg-secondary/10 rounded-full inline-block border border-secondary/20">
               Operations Flow
             </span>
-            <h2 className="text-primary dark:text-white font-heading font-extrabold text-2xl md:text-3xl leading-tight">
+            <h2 className="text-primary dark:text-white font-heading font-black text-3xl md:text-4xl leading-tight">
               Development Process
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-semibold text-text-gray dark:text-zinc-400 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
-              { id: "01", title: "Discovery", desc: "Collect logs, details, user features specs sheets." },
-              { id: "02", title: "Research", desc: "Audit competitor portals, security schemas protocols." },
-              { id: "03", title: "Planning", desc: "Build timelines, packages scopes, mapping integrations." },
-              { id: "04", title: "UI Design", desc: "Craft custom Figmas layout templates with glass cards." },
-              { id: "05", title: "Development", desc: "Write clean React & Node components databases." },
-              { id: "06", title: "Testing", desc: "Lighthouse audits check, API latency logs monitor." },
-              { id: "07", title: "Launch", desc: "Deploy configurations onto AWS staging servers." },
-              { id: "08", title: "Support", desc: "Monthly backing backups, upgrades updates patches." }
+              { id: "01", title: "Discovery", desc: "Collect specifications, logs, user objectives, and feature blueprints sheets." },
+              { id: "02", title: "Research", desc: "Audit competitor software portals, database schemas, and security cryptography rules." },
+              { id: "03", title: "Planning", desc: "Compile development milestones roadmaps, pricing quotes packages, and API scopes." },
+              { id: "04", title: "UI Design", desc: "Craft custom high-fidelity Figma canvas layouts matching modern aesthetics guides." },
+              { id: "05", title: "Development", desc: "Write clean React frontend frameworks and optimized scalable Node.js backend controllers." },
+              { id: "06", title: "Testing", desc: "Audit speed latency using Lighthouse, check responsive widths, and debug queries errors." },
+              { id: "07", title: "Launch", desc: "Deploy configurations onto AWS cloud, wire Cloudflare DNS, and secure sitemaps." },
+              { id: "08", title: "Support", desc: "Provide monthly files backings up, packages upgrades, security updates, and maintenance." }
             ].map((p, idx) => (
-              <div key={idx} className="p-5 bg-bg-card border border-border-light dark:bg-zinc-900/30 dark:border-zinc-800/80 rounded-xl flex items-start gap-3 hover:border-secondary/20 transition-all duration-300">
-                <span className="font-heading font-black text-secondary text-sm shrink-0">{p.id}</span>
-                <div>
-                  <h4 className="font-heading font-bold text-xs text-primary dark:text-white">{p.title}</h4>
-                  <p className="text-[10px] text-text-gray dark:text-zinc-400 font-body mt-1 leading-normal">{p.desc}</p>
+              <div key={idx} className="p-6 bg-white/70 dark:bg-zinc-900/30 backdrop-blur-md border border-slate-100 dark:border-zinc-800/80 rounded-2xl shadow-sm hover:shadow-md hover:border-secondary/35 dark:hover:border-blue-500/35 transition-all duration-300 flex flex-col justify-between h-[160px] relative overflow-hidden group">
+                {/* Large Background Step Number */}
+                <span className="text-4xl font-heading font-black text-secondary/10 dark:text-blue-500/10 absolute right-4 top-4 select-none">
+                  {p.id}
+                </span>
+                
+                <div className="space-y-2 mt-auto">
+                  <h4 className="font-heading font-black text-xs text-primary dark:text-white group-hover:text-secondary dark:group-hover:text-blue-400 transition-colors">
+                    {p.title}
+                  </h4>
+                  <p className="text-text-gray dark:text-zinc-400 text-[10px] font-body leading-relaxed font-medium">
+                    {p.desc}
+                  </p>
                 </div>
               </div>
             ))}
