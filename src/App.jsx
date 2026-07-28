@@ -17,6 +17,8 @@ import Careers from './pages/Careers/Careers';
 import Contact from './pages/Contact/Contact';
 import Privacy from './pages/Privacy/Privacy';
 import Terms from './pages/Terms/Terms';
+import Refund from './pages/Refund/Refund';
+import Cookies from './pages/Cookies/Cookies';
 import NotFound from './pages/404/NotFound';
 
 // Solutions
@@ -104,6 +106,8 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="terms" element={<Terms />} />
+          <Route path="refund" element={<Refund />} />
+          <Route path="cookies" element={<Cookies />} />
           {/* Wildcard 404 Route */}
           <Route path="*" element={<NotFound />} />
         </Route>
