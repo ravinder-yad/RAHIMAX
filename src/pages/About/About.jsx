@@ -156,19 +156,59 @@ const About = () => {
         </div>
       </section>
 
-      {/* ② Our Story with rich visuals */}
+      {/* ② Our Story with rich visuals (Genesis Section) */}
       <section className="py-24 bg-bg-surface dark:bg-slate-900 text-left border-b border-border-light dark:border-zinc-800 relative">
-        <div className="max-w-4xl mx-auto px-6">
-          <span className="text-secondary text-[9px] uppercase tracking-widest font-extrabold block mb-2">Genesis</span>
-          <h2 className="text-primary dark:text-white font-heading font-black text-2xl md:text-3xl leading-tight mb-6">Our Story</h2>
-          <div className="space-y-4 text-xs sm:text-sm text-text-gray dark:text-zinc-300 font-body leading-relaxed">
-            <p>
-              Rahimax was founded with one clear goal — to help businesses build modern digital products that are fast, scalable, and beautifully designed. We observed that most agencies rely on heavy WordPress templates, slow page builders, and unsecure code, resulting in slow load times and vulnerable applications.
-            </p>
-            <p>
-              We solved this by writing custom-coded React and Node.js solutions from scratch. By prioritizing clean layouts, database optimization, and high-performance server configurations, we help our clients build authority and capture leads with zero technical compromises.
-            </p>
+        <div className="absolute top-0 right-0 w-48 h-48 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Left Column: Bold Slogan & Status Badge */}
+          <div className="lg:col-span-5 space-y-4">
+            <span className="text-secondary dark:text-blue-400 text-[9px] uppercase tracking-widest font-extrabold px-3 py-1 bg-secondary/10 dark:bg-blue-500/10 rounded-full inline-block border border-secondary/20">
+              Genesis
+            </span>
+            <h2 className="text-primary dark:text-white font-heading font-black text-3xl md:text-4xl leading-tight">
+              Our Story & <br />
+              Digital Purpose.
+            </h2>
+            <div className="pt-6 border-t border-border-light dark:border-zinc-800 space-y-3">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+                <span className="text-[10px] text-text-gray dark:text-zinc-400 font-bold uppercase tracking-wider">Fast Execution</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+                <span className="text-[10px] text-text-gray dark:text-zinc-400 font-bold uppercase tracking-wider">Custom Hand-Written Code</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+                <span className="text-[10px] text-text-gray dark:text-zinc-400 font-bold uppercase tracking-wider">Zero Template Overrides</span>
+              </div>
+            </div>
           </div>
+
+          {/* Right Column: Detailed narrative & Glass Quote */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="space-y-4 text-xs sm:text-sm text-text-gray dark:text-zinc-300 font-body leading-relaxed">
+              <p className="first-letter:text-3xl first-letter:font-heading first-letter:font-black first-letter:text-secondary first-letter:mr-2 first-letter:float-left">
+                Rahimax was founded with one clear goal — to help businesses build modern digital products that are fast, scalable, and beautifully designed. We observed that most agencies rely on heavy WordPress templates, slow page builders, and unsecure code, resulting in slow load times and vulnerable applications.
+              </p>
+              <p>
+                We solved this by writing custom-coded React and Node.js solutions from scratch. By prioritizing clean layouts, database optimization, and high-performance server configurations, we help our clients build authority and capture leads with zero technical compromises.
+              </p>
+            </div>
+
+            {/* Glass Quote Card */}
+            <div className="bg-bg-card border border-border-light/75 dark:bg-zinc-800/50 dark:border-zinc-700/50 p-6 rounded-2xl shadow-sm relative overflow-hidden mt-6">
+              <div className="absolute top-0 left-0 w-1 h-full bg-secondary" />
+              <p className="text-[11px] italic font-body text-text-gray dark:text-zinc-300 leading-relaxed">
+                "Every single line of code we write is crafted to deliver unmatched loading speeds, security, and conversion. That is our genesis promise."
+              </p>
+              <span className="block text-[9px] font-bold text-primary dark:text-white mt-3 uppercase tracking-wider">
+                — Ravinder, Founder
+              </span>
+            </div>
+          </div>
+
         </div>
       </section>
 
