@@ -693,25 +693,46 @@ const About = () => {
         </div>
       </section>
 
-      {/* 🏆 10. Achievements Counters */}
-      <section className="py-20 bg-bg-light dark:bg-slate-950 px-6 border-b border-border-light dark:border-zinc-800">
+      {/* 🏆 10. Achievements Counters with Dynamic Count Animation */}
+      <section className="py-20 bg-bg-light dark:bg-slate-950 px-6 border-b border-border-light dark:border-zinc-800 relative">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          
           <div>
-            <span className="font-heading font-black text-3xl lg:text-4xl text-secondary dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-blue-400 dark:to-indigo-400 block">150+</span>
-            <span className="text-[10px] text-text-gray dark:text-zinc-400 font-bold uppercase tracking-wider block mt-1">Projects Delivered</span>
+            <span className="font-heading font-black text-3xl lg:text-4xl text-secondary dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-blue-400 dark:to-indigo-400 block">
+              <Counter end="150" suffix="+" />
+            </span>
+            <span className="text-[10px] text-text-gray dark:text-zinc-400 font-bold uppercase tracking-wider block mt-2">
+              Projects Delivered
+            </span>
           </div>
+
           <div>
-            <span className="font-heading font-black text-3xl lg:text-4xl text-secondary dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-indigo-400 dark:to-purple-400 block">98%</span>
-            <span className="text-[10px] text-text-gray dark:text-zinc-400 font-bold uppercase tracking-wider block mt-1">Client Satisfaction</span>
+            <span className="font-heading font-black text-3xl lg:text-4xl text-secondary dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-indigo-400 dark:to-purple-400 block">
+              <Counter end="98" suffix="%" />
+            </span>
+            <span className="text-[10px] text-text-gray dark:text-zinc-400 font-bold uppercase tracking-wider block mt-2">
+              Client Satisfaction
+            </span>
           </div>
+
           <div>
-            <span className="font-heading font-black text-3xl lg:text-4xl text-secondary dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-purple-400 dark:to-pink-400 block">40+</span>
-            <span className="text-[10px] text-text-gray dark:text-zinc-400 font-bold uppercase tracking-wider block mt-1">Industries Served</span>
+            <span className="font-heading font-black text-3xl lg:text-4xl text-secondary dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-purple-400 dark:to-pink-400 block">
+              <Counter end="40" suffix="+" />
+            </span>
+            <span className="text-[10px] text-text-gray dark:text-zinc-400 font-bold uppercase tracking-wider block mt-2">
+              Industries Served
+            </span>
           </div>
+
           <div>
-            <span className="font-heading font-black text-3xl lg:text-4xl text-secondary dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-pink-400 dark:to-blue-400 block">24/7</span>
-            <span className="text-[10px] text-text-gray dark:text-zinc-400 font-bold uppercase tracking-wider block mt-1">Support SLA</span>
+            <span className="font-heading font-black text-3xl lg:text-4xl text-secondary dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-pink-400 dark:to-blue-400 block">
+              <Counter end="24/7" />
+            </span>
+            <span className="text-[10px] text-text-gray dark:text-zinc-400 font-bold uppercase tracking-wider block mt-2">
+              Support SLA
+            </span>
           </div>
+
         </div>
       </section>
 
@@ -855,5 +876,40 @@ const Linkedin = ({ className }) => (
     <circle cx="4" cy="4" r="2"></circle>
   </svg>
 );
+
+// Custom Counter component for dynamic number ticking
+const Counter = ({ end, duration = 1500, suffix = "" }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const target = parseInt(end, 10);
+    if (isNaN(target)) {
+      setCount(end);
+      return;
+    }
+
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const currentCount = Math.floor(progress * target);
+      setCount(currentCount);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        setCount(target);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }, [end, duration]);
+
+  const isNumeric = !isNaN(parseInt(end, 10)) && /^[0-9]+$/.test(end.toString().replace(/[^0-9]/g, ''));
+  return (
+    <span>
+      {isNumeric ? count : end}
+      {suffix}
+    </span>
+  );
+};
 
 export default About;
