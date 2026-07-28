@@ -275,7 +275,9 @@ const About = () => {
           </div>
 
         </div>
-          {/* 💎 SIGNATURE SECTION: Why We Started Rahimax with Premium Cards */}
+      </section>
+
+      {/* 💎 SIGNATURE SECTION: Why We Started Rahimax with Premium Cards */}
       <section className="py-28 bg-[#09090B] text-white text-left border-y border-zinc-900 px-6 relative overflow-hidden">
         
         {/* Internal Glow Mesh */}
