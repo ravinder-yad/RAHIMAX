@@ -883,23 +883,30 @@ const About = () => {
         </div>
       </section>
 
-      {/* ❓ FAQs Accordion */}
+      {/* ❓ FAQs Accordion (Redesigned with 10 detailed FAQ items) */}
       <section className="py-24 bg-bg-light dark:bg-slate-950 px-6 text-left border-b border-border-light dark:border-zinc-800">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 px-3 py-1 bg-secondary/10 rounded-full inline-block border border-secondary/20">
               Support
             </span>
-            <h2 className="text-primary dark:text-white font-heading font-extrabold text-2xl md:text-3xl leading-tight">
+            <h2 className="text-primary dark:text-white font-heading font-black text-2xl md:text-3xl leading-tight mt-2">
               Frequently Asked Questions
             </h2>
           </div>
 
           <div className="space-y-4">
             {[
-              { q: "Why choose Rahimax custom code over templates?", a: "Templates load bulky libraries and are hard to customize. We write React elements from scratch so your pages load under 1.5s and are fully secure." },
-              { q: "How long does a standard project take?", a: "Business sites take 5-10 days, headless E-Commerce portals take 10-20 days, and complex systems range from 30-90 days." },
-              { q: "Do you offer maintenance support?", a: "Yes. Every plan includes dedicated support, checking database queries, backups, and security updates." }
+              { q: "Why choose Rahimax custom code over template systems?", a: "Templates load bulky libraries and are hard to customize. We write React elements from scratch to keep page load speeds under 1.5s, block SQL vulnerabilities, and achieve perfect 100/100 Lighthouse SEO metrics." },
+              { q: "How long does a standard web project take to complete?", a: "A custom business portal takes 5-10 days, headless E-Commerce storefronts take 10-20 days, and large enterprise database school/clinic ERP systems take 30-90 days." },
+              { q: "How much does a custom Rahimax project cost?", a: "All plans are tailored to your specific feature list. Check our interactive Estimator Calculator widget on the Pricing page to select modules and see direct estimates." },
+              { q: "Do you provide post-launch support and servers maintenance?", a: "Yes, every delivery includes dedicated support, checking database queries logs, monthly backups, and core package upgrades." },
+              { q: "Can you redesign our existing template website?", a: "Absolutely. We audit your current page load speeds, retain your existing Google SEO sitemap paths, and rewrite the frontend using clean Next.js/Tailwind UI layouts." },
+              { q: "Do you offer search engine optimization (SEO) setup?", a: "Yes. Every page is structured with HTML5 semantic standards, optimized image metadata, JSON-LD schema layouts, and custom sitemaps configs for quick indexing." },
+              { q: "Will I own the complete source code files of my project?", a: "Yes. Upon final delivery and milestone clearance, we transfer 100% of the repository ownership files to your active GitHub account." },
+              { q: "What database security protocols do you integrate?", a: "We use encrypted password hashing (bcrypt), JSON Web Tokens (JWT) for secure session checks, and sanitize input fields models schema to block script injection leaks." },
+              { q: "Can you connect custom payment gateways like Stripe or Razorpay?", a: "Yes. We build secure Webhook configurations, checkout order routing panels, and receipt invoice generation pipelines for local/global currencies." },
+              { q: "Do we need to buy hosting services separately?", a: "We handle cloud setup and configurations on Vercel, Netlify, or AWS EC2 instances, helping you map custom domains and SSL credentials easily." }
             ].map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
@@ -911,12 +918,12 @@ const About = () => {
                     className="w-full flex items-center justify-between p-5 text-left focus:outline-none cursor-pointer group animate-fade-in"
                   >
                     <span className={`font-heading font-bold text-xs md:text-sm transition-colors ${
-                      isOpen ? 'text-secondary' : 'text-primary dark:text-white group-hover:text-secondary'
+                      isOpen ? 'text-secondary font-black' : 'text-primary dark:text-white group-hover:text-secondary'
                     }`}>{faq.q}</span>
                     <span className={`p-1 rounded-full border transition-all ${
                       isOpen ? 'bg-secondary text-white border-secondary' : 'bg-slate-100 dark:bg-zinc-800 border-border-light dark:border-zinc-700 text-primary dark:text-white'
                     }`}>
-                      {isOpen ? <X className="w-3 h-3" /> : <Plus className="w-3 h-3" />}
+                      {isOpen ? <X className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
                     </span>
                   </button>
                   {isOpen && (
