@@ -3,15 +3,44 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { 
   Check, ArrowRight, ShieldCheck, Sparkles, Code2, Users, 
-  Award, Heart, Target, Eye, Globe, X, Plus, Database, Cloud
+  Award, Heart, Target, Eye, Globe, X, Plus, Database, Cloud,
+  ChevronLeft, ChevronRight
 } from 'lucide-react';
 
 const About = () => {
   const [openFaq, setOpenFaq] = useState(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const reviews = [
+    { name: "Vikram Malhotra", role: "Director", comp: "Truffle Bistro Group", txt: "Rahimax constructed our entire online kitchen order dispatch suite. It reduced order queue latency by 45%. Highly recommended!", stars: 5 },
+    { name: "Neha Sharma", role: "Founder", comp: "Aura E-Commerce Store", txt: "Bespoke React storefront loaded in 1.1 seconds. Our checkouts conversion rates jumped by 38% in a month.", stars: 5 },
+    { name: "Rahul Deshmukh", role: "Principal", comp: "Zenith Global School", txt: "The student databases and transcript generator ERP simplified report compilation for 2,000 students.", stars: 5 },
+    { name: "Arjun Verma", role: "CEO", comp: "Skyline Real Estate", txt: "Real-time property filters and interactive glass maps cards resulted in 40% more booking consultations.", stars: 5 },
+    { name: "Dr. Alok Sen", role: "Chief Architect", comp: "Apollo Clinic Network", txt: "Delivered appointment slots managers and patients records panels. Zero compliance leaks. Exceptional engineering care.", stars: 5 },
+    { name: "Shreya Ghoshal", role: "Manager", comp: "Prime Fitness Studio", txt: "Active shift check-in scanner widget built by Ravinder is robust. Simple database tracking schemas.", stars: 5 },
+    { name: "Kabir Mehta", role: "Director", comp: "Lens Hub Creative Studio", txt: "Stunning Apple-grade styling layouts and custom React micro-animations. Our clients are always impressed.", stars: 5 },
+    { name: "Pooja Hegde", role: "Partner", comp: "Safe Legal Partners", txt: "Secured client scheduling portals, encrypted database inputs, and automated sitemaps. Clean execution.", stars: 5 },
+    { name: "Amit Singhal", role: "Operations Lead", comp: "Apex Logistics Hub", txt: "Engineered candidates HR pipelines status tracking boards. Cut recruitment delay times by 50%.", stars: 5 },
+    { name: "Suresh Prabhu", role: "Director", comp: "Smart Factory Group", txt: "Custom automated stock alerts warning monitors integrated. Exceptional dashboard reliability and support.", stars: 5 }
+  ];
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % reviews.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [reviews.length]);
+
+  const nextSlide = () => {
+    setActiveSlide((prev) => (prev + 1) % reviews.length);
+  };
+  const prevSlide = () => {
+    setActiveSlide((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
 
   const toggleFaq = (idx) => {
     setOpenFaq(openFaq === idx ? null : idx);
@@ -736,38 +765,121 @@ const About = () => {
         </div>
       </section>
 
-      {/* ❤️ 11. Testimonials */}
-      <section className="py-24 bg-bg-surface dark:bg-slate-900 px-6 text-left border-b border-border-light dark:border-zinc-800">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 px-3 py-1 bg-secondary/10 rounded-full inline-block border border-secondary/20">
-              Reviews
-            </span>
-            <h2 className="text-primary dark:text-white font-heading font-extrabold text-2xl md:text-3xl leading-tight">
-              Client Testimonials
-            </h2>
+      {/* ❤️ 11. Testimonials (Redesigned looping Slider Carousel with 10 reviews) */}
+      <section className="py-24 bg-bg-surface dark:bg-slate-900 px-6 text-left border-b border-border-light dark:border-zinc-800 relative">
+        <div className="max-w-6xl mx-auto">
+          
+          <div className="flex justify-between items-end mb-16">
+            <div>
+              <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 px-3 py-1 bg-secondary/10 rounded-full inline-block border border-secondary/20">
+                Reviews
+              </span>
+              <h2 className="text-primary dark:text-white font-heading font-black text-2xl md:text-3xl leading-tight mt-2">
+                Client Testimonials
+              </h2>
+            </div>
+            
+            {/* Slider triggers */}
+            <div className="flex gap-2">
+              <button 
+                onClick={prevSlide}
+                className="w-10 h-10 rounded-full border border-border-light dark:border-zinc-800 bg-bg-card hover:bg-secondary/15 hover:border-secondary/40 text-primary dark:text-white flex items-center justify-center shadow-sm transition-all cursor-pointer"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button 
+                onClick={nextSlide}
+                className="w-10 h-10 rounded-full border border-border-light dark:border-zinc-800 bg-bg-card hover:bg-secondary/15 hover:border-secondary/40 text-primary dark:text-white flex items-center justify-center shadow-sm transition-all cursor-pointer"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs font-semibold text-text-gray">
-            <div className="bg-bg-card border border-border-light dark:bg-zinc-900/60 dark:border-zinc-800 p-6 rounded-[24px] relative shadow-sm hover:border-secondary/20 transition-all duration-300">
-              <div className="text-amber-500 flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => <Check className="w-3.5 h-3.5 fill-current text-amber-500 shrink-0" key={i} />)}
+          {/* Testimonial slider grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            {/* Card 1: Always visible */}
+            <div className="bg-bg-card border border-border-light dark:bg-zinc-900/60 dark:border-zinc-800 p-7 rounded-[28px] shadow-lg flex flex-col justify-between h-[230px] hover:border-secondary/35 dark:hover:border-blue-500/35 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+              <div>
+                <div className="text-amber-500 flex gap-1 mb-3">
+                  {[...Array(reviews[activeSlide].stars)].map((_, i) => (
+                    <Check className="w-3.5 h-3.5 fill-current text-amber-500 shrink-0" key={i} />
+                  ))}
+                </div>
+                <p className="italic leading-relaxed font-body text-xs text-text-gray dark:text-zinc-300 line-clamp-4">
+                  "{reviews[activeSlide].txt}"
+                </p>
               </div>
-              <p className="italic leading-relaxed font-body text-[11px] text-text-gray dark:text-zinc-300">
-                "Rahimax exceeded our expectations. Ravinder and the team constructed our entire logistics dashboard ERP and launched it 5 days ahead of schedule. Highly recommended!"
-              </p>
-              <span className="block text-[10px] text-primary dark:text-white font-bold mt-4 uppercase tracking-wider">— Director, Truffle Bistro Group</span>
-            </div>
-            <div className="bg-bg-card border border-border-light dark:bg-zinc-900/60 dark:border-zinc-800 p-6 rounded-[24px] relative shadow-sm hover:border-secondary/20 transition-all duration-300">
-              <div className="text-amber-500 flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => <Check className="w-3.5 h-3.5 fill-current text-amber-500 shrink-0" key={i} />)}
+              <div className="border-t border-border-light dark:border-zinc-850 pt-3 flex flex-col">
+                <span className="text-[11px] font-heading font-black text-primary dark:text-white">
+                  {reviews[activeSlide].name}
+                </span>
+                <span className="text-[9px] text-text-gray dark:text-zinc-500 font-bold uppercase tracking-wide mt-0.5">
+                  {reviews[activeSlide].role}, {reviews[activeSlide].comp}
+                </span>
               </div>
-              <p className="italic leading-relaxed font-body text-[11px] text-text-gray dark:text-zinc-300">
-                "Bespoke code loaded our e-commerce portal under 1.1s. Our SEO analytics jumped by 40% in a month. Excellent UI design simplicity!"
-              </p>
-              <span className="block text-[10px] text-primary dark:text-white font-bold mt-4 uppercase tracking-wider">— Founder, Apex Logistics</span>
             </div>
+
+            {/* Card 2: Visible on md+ */}
+            <div className="hidden md:flex bg-bg-card border border-border-light dark:bg-zinc-900/60 dark:border-zinc-800 p-7 rounded-[28px] shadow-lg flex-col justify-between h-[230px] hover:border-secondary/35 dark:hover:border-blue-500/35 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+              <div>
+                <div className="text-amber-500 flex gap-1 mb-3">
+                  {[...Array(reviews[(activeSlide + 1) % reviews.length].stars)].map((_, i) => (
+                    <Check className="w-3.5 h-3.5 fill-current text-amber-500 shrink-0" key={i} />
+                  ))}
+                </div>
+                <p className="italic leading-relaxed font-body text-xs text-text-gray dark:text-zinc-300 line-clamp-4">
+                  "{reviews[(activeSlide + 1) % reviews.length].txt}"
+                </p>
+              </div>
+              <div className="border-t border-border-light dark:border-zinc-850 pt-3 flex flex-col">
+                <span className="text-[11px] font-heading font-black text-primary dark:text-white">
+                  {reviews[(activeSlide + 1) % reviews.length].name}
+                </span>
+                <span className="text-[9px] text-text-gray dark:text-zinc-500 font-bold uppercase tracking-wide mt-0.5">
+                  {reviews[(activeSlide + 1) % reviews.length].role}, {reviews[(activeSlide + 1) % reviews.length].comp}
+                </span>
+              </div>
+            </div>
+
+            {/* Card 3: Visible on lg+ */}
+            <div className="hidden lg:flex bg-bg-card border border-border-light dark:bg-zinc-900/60 dark:border-zinc-800 p-7 rounded-[28px] shadow-lg flex-col justify-between h-[230px] hover:border-secondary/35 dark:hover:border-blue-500/35 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+              <div>
+                <div className="text-amber-500 flex gap-1 mb-3">
+                  {[...Array(reviews[(activeSlide + 2) % reviews.length].stars)].map((_, i) => (
+                    <Check className="w-3.5 h-3.5 fill-current text-amber-500 shrink-0" key={i} />
+                  ))}
+                </div>
+                <p className="italic leading-relaxed font-body text-xs text-text-gray dark:text-zinc-300 line-clamp-4">
+                  "{reviews[(activeSlide + 2) % reviews.length].txt}"
+                </p>
+              </div>
+              <div className="border-t border-border-light dark:border-zinc-850 pt-3 flex flex-col">
+                <span className="text-[11px] font-heading font-black text-primary dark:text-white">
+                  {reviews[(activeSlide + 2) % reviews.length].name}
+                </span>
+                <span className="text-[9px] text-text-gray dark:text-zinc-500 font-bold uppercase tracking-wide mt-0.5">
+                  {reviews[(activeSlide + 2) % reviews.length].role}, {reviews[(activeSlide + 2) % reviews.length].comp}
+                </span>
+              </div>
+            </div>
+
           </div>
+
+          {/* Dot Indicators */}
+          <div className="flex justify-center gap-1.5 mt-8">
+            {reviews.map((_, i) => (
+              <button 
+                key={i}
+                onClick={() => setActiveSlide(i)}
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                  activeSlide === i ? 'w-6 bg-secondary' : 'w-1.5 bg-border-light dark:bg-zinc-800'
+                }`}
+              />
+            ))}
+          </div>
+
         </div>
       </section>
 
