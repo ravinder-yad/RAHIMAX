@@ -34,7 +34,7 @@ const FloatingActions = () => {
         title="Open Support Panel"
       >
         <MessageSquare className="w-5 h-5" />
-        <span className="absolute right-full mr-3 hidden sm:flex bg-white dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 text-[10px] uppercase font-black tracking-wider px-2.5 py-1.5 rounded-xl shadow-md border border-slate-200 dark:border-zinc-800 pointer-events-none whitespace-nowrap">
+        <span className="absolute right-full mr-3 hidden sm:flex bg-white dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 text-[10px] uppercase font-black tracking-wider px-2.5 py-1.5 rounded-xl shadow-md border border-slate-200 dark:border-zinc-800 pointer-events-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           Open Support Panel
         </span>
       </button>
@@ -51,7 +51,7 @@ const FloatingActions = () => {
         title="Hide Support Menu"
       >
         <X className="w-3.5 h-3.5" />
-        <span className="absolute right-full mr-3 hidden sm:flex bg-white dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 text-[9px] uppercase font-bold tracking-wider px-2.5 py-1 rounded shadow-md pointer-events-none whitespace-nowrap border border-slate-200 dark:border-zinc-800">
+        <span className="absolute right-full mr-3 hidden sm:flex bg-white dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 text-[9px] uppercase font-bold tracking-wider px-2.5 py-1 rounded shadow-md pointer-events-none whitespace-nowrap border border-slate-200 dark:border-zinc-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           Hide Panel
         </span>
       </button>
@@ -64,7 +64,7 @@ const FloatingActions = () => {
           aria-label="Scroll to Top"
         >
           <ArrowUp className="w-5 h-5 text-slate-800 dark:text-white" />
-          <span className="absolute right-full mr-3 hidden sm:flex bg-white dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 text-[10px] uppercase font-black tracking-wider px-2.5 py-1.5 rounded-xl shadow-md border border-slate-200 dark:border-zinc-850 pointer-events-none whitespace-nowrap">
+          <span className="absolute right-full mr-3 hidden sm:flex bg-white dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 text-[10px] uppercase font-black tracking-wider px-2.5 py-1.5 rounded-xl shadow-md border border-slate-200 dark:border-zinc-850 pointer-events-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             Scroll Top
           </span>
         </button>
@@ -77,7 +77,7 @@ const FloatingActions = () => {
         aria-label="Email Us"
       >
         <Mail className="w-5 h-5" />
-        <span className="absolute right-full mr-3 hidden sm:flex bg-white dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 text-[10px] uppercase font-black tracking-wider px-2.5 py-1.5 rounded-xl shadow-md border border-slate-200 dark:border-zinc-850 pointer-events-none whitespace-nowrap">
+        <span className="absolute right-full mr-3 hidden sm:flex bg-white dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 text-[10px] uppercase font-black tracking-wider px-2.5 py-1.5 rounded-xl shadow-md border border-slate-200 dark:border-zinc-850 pointer-events-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           Email Us
         </span>
       </a>
@@ -89,7 +89,7 @@ const FloatingActions = () => {
         aria-label="Call Us"
       >
         <Phone className="w-5 h-5" />
-        <span className="absolute right-full mr-3 hidden sm:flex bg-white dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 text-[10px] uppercase font-black tracking-wider px-2.5 py-1.5 rounded-xl shadow-md border border-slate-200 dark:border-zinc-855 pointer-events-none whitespace-nowrap">
+        <span className="absolute right-full mr-3 hidden sm:flex bg-white dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 text-[10px] uppercase font-black tracking-wider px-2.5 py-1.5 rounded-xl shadow-md border border-slate-200 dark:border-zinc-855 pointer-events-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           Book a Call
         </span>
       </a>
@@ -103,7 +103,7 @@ const FloatingActions = () => {
         aria-label="Chat on WhatsApp"
       >
         <WhatsAppIcon className="w-5 h-5" />
-        <span className="absolute right-full mr-3 hidden sm:flex bg-white dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 text-[10px] uppercase font-black tracking-wider px-2.5 py-1.5 rounded-xl shadow-md border border-slate-200 dark:border-zinc-855 pointer-events-none whitespace-nowrap">
+        <span className="absolute right-full mr-3 hidden sm:flex bg-white dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 text-[10px] uppercase font-black tracking-wider px-2.5 py-1.5 rounded-xl shadow-md border border-slate-200 dark:border-zinc-855 pointer-events-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           WhatsApp Chat
         </span>
       </a>
