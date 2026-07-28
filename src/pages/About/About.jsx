@@ -62,6 +62,17 @@ const About = () => {
     { year: "2026", title: "Global Client Expansion", desc: "Serving business clients in India, USA, and GCC region with scalable secure architectures.", icon: <Globe className="w-4 h-4 text-emerald-500" /> }
   ];
 
+  const whyChooseUs = [
+    { title: "Modern UI", desc: "Stunning Apple-grade styling and seamless micro-animations that engage visitors.", icon: <Sparkles className="w-5 h-5 text-blue-500 dark:text-blue-400" /> },
+    { title: "Fast Performance", desc: "React Server Components and optimized asset bundlers to load under 1.5s.", icon: <Check className="w-5 h-5 text-indigo-500 dark:text-indigo-400" /> },
+    { title: "SEO Optimized", desc: "Clean HTML structure and server-rendered data schemas for maximum index rankings.", icon: <Globe className="w-5 h-5 text-purple-500 dark:text-purple-400" /> },
+    { title: "Mobile Friendly", desc: "100% responsive fluid layouts adapting perfectly across all mobile and tablet widths.", icon: <Globe className="w-5 h-5 text-pink-500 dark:text-pink-400" /> },
+    { title: "Secure Code", desc: "Encrypted API keys, token authentication, and SQL injection sanitization protocols.", icon: <ShieldCheck className="w-5 h-5 text-rose-500 dark:text-rose-400" /> },
+    { title: "Affordable Rates", desc: "Fixed project quotes with structured milestones payments. Zero maintenance surcharges.", icon: <Award className="w-5 h-5 text-emerald-500 dark:text-emerald-400" /> },
+    { title: "Dedicated Support", desc: "Direct WhatsApp channel and scheduled Zoom tutorials for seamless dashboard management.", icon: <Heart className="w-5 h-5 text-indigo-500 dark:text-indigo-400" /> },
+    { title: "Scalable Structure", desc: "Bespoke clean code bases that scale as your active user database expands.", icon: <Code2 className="w-5 h-5 text-blue-500 dark:text-blue-400" /> }
+  ];
+
   return (
     <>
       <Helmet>
@@ -465,31 +476,29 @@ const About = () => {
       </section>
 
       {/* ⑥ Why Choose Rahimax Benefits list */}
-      <section className="py-24 bg-bg-light dark:bg-slate-950 text-left border-b border-border-light dark:border-zinc-800 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 bg-bg-light dark:bg-slate-950 text-left border-b border-border-light dark:border-zinc-800 px-6 relative">
+        <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full bg-secondary/5 dark:bg-secondary/10 blur-[120px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 px-3 py-1 bg-secondary/10 rounded-full inline-block border border-secondary/20">
               Why Us
             </span>
-            <h2 className="text-primary dark:text-white font-heading font-extrabold text-2xl md:text-3xl leading-tight">
+            <h2 className="text-primary dark:text-white font-heading font-black text-3xl md:text-4xl leading-tight">
               Why Choose Rahimax
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left max-w-5xl mx-auto">
-            {[
-              "Modern User Interfaces",
-              "Super Fast Performance (<1.5s load)",
-              "SEO Optimized Codebases",
-              "100% Mobile Friendly Layouts",
-              "Encrypted Secure Backend Code",
-              "Highly Affordable Rates",
-              "Dedicated Tech Support Managers",
-              "Scalable Microservices Architectures"
-            ].map((pt, idx) => (
-              <div key={idx} className="bg-bg-card border border-border-light/75 dark:bg-zinc-900/40 dark:border-zinc-800/80 p-4 rounded-xl flex items-center gap-2.5 text-xs font-semibold text-text-gray dark:text-zinc-300 hover:border-secondary/20 transition-all duration-300">
-                <Check className="w-4.5 h-4.5 text-emerald-500 dark:text-emerald-400 bg-emerald-500/15 rounded-full p-0.5 shrink-0" />
-                <span>{pt}</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {whyChooseUs.map((item, idx) => (
+              <div key={idx} className="p-6 bg-white/70 dark:bg-zinc-900/30 backdrop-blur-md border border-slate-100 dark:border-zinc-800/80 rounded-3xl shadow-sm hover:shadow-lg hover:border-secondary/35 dark:hover:border-blue-500/35 transition-all duration-300 flex flex-col justify-between h-[180px] hover:-translate-y-1">
+                <div className="w-10 h-10 rounded-xl bg-secondary/5 dark:bg-zinc-800 flex items-center justify-center mb-3">
+                  {item.icon}
+                </div>
+                <div>
+                  <h4 className="font-heading font-black text-xs text-primary dark:text-white">{item.title}</h4>
+                  <p className="text-text-gray dark:text-zinc-400 text-[10px] font-body mt-2 leading-relaxed font-medium">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
