@@ -14,6 +14,7 @@ import Pricing from './pages/Pricing/Pricing';
 import Reviews from './pages/Reviews/Reviews';
 import Blog from './pages/Blog/Blog';
 import Careers from './pages/Careers/Careers';
+import Contact from './pages/Contact/Contact';
 import Privacy from './pages/Privacy/Privacy';
 import Terms from './pages/Terms/Terms';
 import NotFound from './pages/404/NotFound';
@@ -100,6 +101,7 @@ const App = () => {
           <Route path="reviews" element={<Reviews />} />
           <Route path="blog" element={<Blog />} />
           <Route path="careers" element={<Careers />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="terms" element={<Terms />} />
           {/* Wildcard 404 Route */}
