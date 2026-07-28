@@ -49,17 +49,26 @@ const PricingGuide = () => {
 
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden bg-bg-light border-b border-border-light mt-[88px]">
-        <div className="max-w-7xl mx-auto px-6 text-left relative z-10">
-          <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-4 px-3 py-1 bg-secondary/10 rounded-full inline-block">
-            Pricing Frameworks
-          </span>
-          <h1 className="text-primary font-heading font-black text-3xl md:text-4xl lg:text-5xl leading-tight">
-            Transparent Pricing <br />
-            Guide
-          </h1>
-          <p className="text-text-gray font-body text-xs sm:text-sm mt-4 max-w-lg leading-relaxed">
-            Detailed calculations and estimation frameworks explaining standard web development costs, developer timelines, and cloud hosting guidelines.
-          </p>
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+          <div className="lg:col-span-7 text-left">
+            <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-4 px-3 py-1 bg-secondary/10 rounded-full inline-block">
+              Pricing Frameworks
+            </span>
+            <h1 className="text-primary font-heading font-black text-3xl md:text-4xl lg:text-5xl leading-tight">
+              Transparent Pricing <br />
+              Guide
+            </h1>
+            <p className="text-text-gray font-body text-xs sm:text-sm mt-4 max-w-lg leading-relaxed">
+              Detailed calculations and estimation frameworks explaining standard web development costs, developer timelines, and cloud hosting guidelines.
+            </p>
+          </div>
+          <div className="lg:col-span-5 h-[280px] rounded-2xl overflow-hidden shadow-lg border border-border-light/50 relative">
+            <img 
+              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" 
+              alt="Pricing Calculators workspace" 
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 

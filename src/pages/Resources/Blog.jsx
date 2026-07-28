@@ -36,17 +36,26 @@ const Blog = () => {
 
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden bg-bg-light border-b border-border-light mt-[88px]">
-        <div className="max-w-7xl mx-auto px-6 text-left relative z-10">
-          <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-4 px-3 py-1 bg-secondary/10 rounded-full inline-block">
-            Insights & Guides
-          </span>
-          <h1 className="text-primary font-heading font-black text-3xl md:text-4xl lg:text-5xl leading-tight">
-            Insights, Ideas <br />
-            & Innovation.
-          </h1>
-          <p className="text-text-gray font-body text-xs sm:text-sm mt-4 max-w-lg leading-relaxed">
-            Learn web development, UI/UX design, search engine optimization, artificial intelligence, and software business scaling.
-          </p>
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+          <div className="lg:col-span-7 text-left">
+            <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-4 px-3 py-1 bg-secondary/10 rounded-full inline-block">
+              Insights & Guides
+            </span>
+            <h1 className="text-primary font-heading font-black text-3xl md:text-4xl lg:text-5xl leading-tight">
+              Insights, Ideas <br />
+              & Innovation.
+            </h1>
+            <p className="text-text-gray font-body text-xs sm:text-sm mt-4 max-w-lg leading-relaxed">
+              Learn web development, UI/UX design, search engine optimization, artificial intelligence, and software business scaling.
+            </p>
+          </div>
+          <div className="lg:col-span-5 h-[280px] rounded-2xl overflow-hidden shadow-lg border border-border-light/50 relative">
+            <img 
+              src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80" 
+              alt="Tech Blog insights" 
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
