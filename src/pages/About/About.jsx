@@ -938,33 +938,90 @@ const About = () => {
         </div>
       </section>
 
-      {/* 📞 Final CTA */}
-      <section className="py-24 bg-bg-surface dark:bg-slate-900 text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-secondary/5 blur-[100px] pointer-events-none" />
-        <div className="max-w-4xl mx-auto relative z-10 px-6">
-          <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-4 px-3.5 py-1.5 bg-secondary/10 rounded-full inline-block border border-secondary/20">
-            Connect With Us
-          </span>
-          <h2 className="text-primary dark:text-white font-heading font-black text-2xl md:text-3xl lg:text-4xl leading-tight max-w-xl mx-auto">
-            Let's Build Something Amazing Together.
-          </h2>
-          <p className="text-text-gray dark:text-zinc-400 font-body text-xs sm:text-sm mt-4 max-w-md mx-auto leading-relaxed">
-            Contact Ravinder, Himesh, and Mayant today to map out your database schemas and request a custom quote blueprint.
-          </p>
+      {/* 📞 Final CTA - Redesigned as a Spotlight Card */}
+      <section className="py-28 bg-bg-surface dark:bg-slate-900 px-6 text-left border-b border-border-light dark:border-zinc-800 relative overflow-hidden">
+        {/* Decorative blur filters */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[350px] h-[350px] rounded-full bg-secondary/5 dark:bg-secondary/10 blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[250px] h-[250px] rounded-full bg-blue-500/5 dark:bg-blue-500/10 blur-[100px] pointer-events-none" />
 
-          <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link 
-              to="/contact"
-              className="bg-secondary hover:bg-secondary/95 text-white font-bold px-8 py-4 rounded-xl text-xs shadow-lg shadow-secondary/10 uppercase tracking-wider transition-all hover:scale-[1.02]"
-            >
-              Start Your Project
-            </Link>
-            <Link 
-              to="/contact"
-              className="bg-white border border-border-light hover:bg-slate-50 text-primary dark:bg-zinc-900 dark:border-zinc-800 dark:text-white font-bold px-8 py-4 rounded-xl text-xs shadow-sm uppercase tracking-wider transition-all hover:scale-[1.02]"
-            >
-              Book Consultation
-            </Link>
+        <div className="max-w-5xl mx-auto bg-white/60 dark:bg-zinc-900/60 backdrop-blur-lg border border-slate-100 dark:border-zinc-800/80 rounded-[40px] p-8 md:p-16 relative overflow-hidden shadow-xl z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Brand details */}
+            <div className="lg:col-span-7 space-y-6">
+              <span className="text-secondary text-[10px] uppercase tracking-[0.25em] font-extrabold px-3 py-1.5 bg-secondary/10 rounded-full inline-block border border-secondary/20 shadow-sm">
+                Connect With Us
+              </span>
+              <h2 className="text-primary dark:text-white font-heading font-black text-3xl md:text-4xl leading-tight">
+                Let's Build Something <br className="hidden md:inline" /> Amazing Together.
+              </h2>
+              <p className="text-text-gray dark:text-zinc-400 font-body text-xs md:text-sm leading-relaxed max-w-lg">
+                Contact Ravinder, Himesh, and Mayant today to map out your custom database schemas, choose a development roadmap, and request a personalized budget quote.
+              </p>
+              
+              <div className="pt-4 flex flex-col sm:flex-row gap-4">
+                <Link 
+                  to="/contact"
+                  className="bg-secondary hover:bg-secondary/95 text-white font-bold px-8 py-4 rounded-xl text-xs shadow-lg shadow-secondary/10 uppercase tracking-wider transition-all hover:scale-[1.02] text-center"
+                >
+                  Start Your Project
+                </Link>
+                <Link 
+                  to="/contact"
+                  className="bg-white border border-border-light hover:bg-slate-50 text-primary dark:bg-zinc-800 dark:border-zinc-700 dark:text-white font-bold px-8 py-4 rounded-xl text-xs shadow-sm uppercase tracking-wider transition-all hover:scale-[1.02] text-center"
+                >
+                  Book Consultation
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Dynamic Info list */}
+            <div className="lg:col-span-5 bg-slate-50/50 dark:bg-zinc-950/40 border border-slate-100 dark:border-zinc-850 p-8 rounded-3xl space-y-6">
+              <h4 className="font-heading font-black text-xs text-primary dark:text-white uppercase tracking-wider border-b border-border-light dark:border-zinc-800 pb-3">
+                Quick Response Channels
+              </h4>
+              
+              <div className="space-y-4 text-xs">
+                
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-secondary/10 text-secondary dark:text-blue-400 shrink-0">
+                    <Globe className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block font-bold text-[10px] text-text-gray dark:text-zinc-550 uppercase tracking-wider">Direct Email</span>
+                    <a href="mailto:support@rahimax.com" className="font-heading font-black text-primary dark:text-white hover:text-secondary transition-colors mt-0.5 block">
+                      support@rahimax.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 shrink-0">
+                    <Check className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block font-bold text-[10px] text-text-gray dark:text-zinc-550 uppercase tracking-wider">Availability Support</span>
+                    <span className="font-heading font-black text-primary dark:text-white block mt-0.5">
+                      24 / 7 / 365 Operations
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-purple-500/10 text-purple-500 dark:text-purple-400 shrink-0">
+                    <Sparkles className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block font-bold text-[10px] text-text-gray dark:text-zinc-550 uppercase tracking-wider">SLA Commitment</span>
+                    <span className="font-heading font-black text-primary dark:text-white block mt-0.5">
+                      Response within 6 Hours
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
