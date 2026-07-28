@@ -34,6 +34,7 @@ const About = () => {
       role: "Founder & Full Stack Developer",
       bio: "Architects client backend portals, designs optimized Mongo databases, and deploys scalable secure server frameworks.",
       img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=80",
+      tag: "FOUNDER",
       socials: { github: "#", twitter: "#", linkedin: "#" }
     },
     {
@@ -41,6 +42,7 @@ const About = () => {
       role: "Co-Founder & UI/UX Director",
       bio: "Frontend specialist crafting premium React user interfaces. Focused on responsive layouts and CSS animations.",
       img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=400&q=80",
+      tag: "UI/UX LEAD",
       socials: { github: "#", twitter: "#", linkedin: "#" }
     },
     {
@@ -48,6 +50,7 @@ const About = () => {
       role: "Co-Founder & Lead Systems Architect",
       bio: "Designs secure logins, handles REST API integrations, and optimizes high-performance AWS configurations.",
       img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&h=400&q=80",
+      tag: "ARCHITECT",
       socials: { github: "#", twitter: "#", linkedin: "#" }
     }
   ];
@@ -516,7 +519,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {team.map((member, idx) => (
-              <div key={idx} className="group bg-white dark:bg-zinc-900/60 border border-border-light dark:border-zinc-800 rounded-[32px] shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between h-[450px] hover:-translate-y-1">
+              <div key={idx} className="group bg-white dark:bg-zinc-900/60 border border-border-light dark:border-zinc-800 rounded-[32px] shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[470px] hover:-translate-y-1 relative">
                 
                 {/* Photo container */}
                 <div className="h-[240px] w-full overflow-hidden relative">
@@ -525,6 +528,10 @@ const About = () => {
                     alt={member.name} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
+                  {/* Floating role badge */}
+                  <span className="absolute top-4 right-4 bg-zinc-900/80 backdrop-blur-md text-[8px] font-black uppercase tracking-wider text-secondary dark:text-blue-400 border border-secondary/35 px-2.5 py-1 rounded-full shadow-md z-20">
+                    {member.tag}
+                  </span>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
