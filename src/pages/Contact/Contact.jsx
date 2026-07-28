@@ -358,7 +358,7 @@ Calculated Price: ₹${price.toLocaleString('en-IN')}
                 <PhoneCall className="w-4 h-4" /> Book a Call
               </a>
               <a 
-                href="https://wa.me/919876543210"
+                href="https://wa.me/918949477114"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-[#25D366] hover:bg-[#22c35e] text-white font-bold px-7 py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2 hover:scale-[1.02]"
@@ -958,7 +958,7 @@ Calculated Price: ₹${price.toLocaleString('en-IN')}
                         <Download className="w-4 h-4" /> Download Quote
                       </button>
                       <a 
-                        href="https://wa.me/919876543210"
+                        href="https://wa.me/918949477114"
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="bg-[#25D366] hover:bg-[#22c35e] text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2"

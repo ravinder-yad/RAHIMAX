@@ -1691,7 +1691,7 @@ const Home = () => {
                 </div>
                 <div>
                   <span className="block text-[9px] uppercase text-text-gray/50 tracking-wider font-bold">PHONE</span>
-                  <span className="text-primary text-xs font-bold font-body">+91 98765 43210</span>
+                  <span className="text-primary text-xs font-bold font-body">+91 89494 77114</span>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -1700,7 +1700,7 @@ const Home = () => {
                 </div>
                 <div>
                   <span className="block text-[9px] uppercase text-text-gray/50 tracking-wider font-bold">HQ</span>
-                  <span className="text-primary text-xs font-bold font-body">Noida, Uttar Pradesh, 201301</span>
+                  <span className="text-primary text-xs font-bold font-body">Alwar, Rajasthan, India</span>
                 </div>
               </div>
             </div>

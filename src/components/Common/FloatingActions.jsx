@@ -21,7 +21,7 @@ const FloatingActions = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const whatsappNumber = "+919876543210";
+  const whatsappNumber = "+918949477114";
   const defaultMessage = "Hello Rahimax! I'm interested in building a web application. Let's chat.";
   const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
@@ -84,7 +84,7 @@ const FloatingActions = () => {
 
       {/* Call Button */}
       <a 
-        href="tel:+919876543210"
+        href="tel:+918949477114"
         className="bg-secondary text-white p-3.5 rounded-full shadow-lg hover:bg-blue-600 hover:scale-110 transition-all duration-300 flex items-center justify-center group relative"
         aria-label="Call Us"
       >

@@ -530,7 +530,7 @@ const Navbar = () => {
 
               {/* Book Call */}
               <a 
-                href="tel:+919876543210"
+                href="tel:+918949477114"
                 className="text-[10px] uppercase tracking-wider font-extrabold text-primary hover:text-secondary flex items-center space-x-0.5"
               >
                 <Phone className="w-3 h-3" />
@@ -580,7 +580,7 @@ const Navbar = () => {
                 
                 <div className="pt-6 space-y-3 font-body">
                   <a 
-                    href="tel:+919876543210" 
+                    href="tel:+918949477114" 
                     className="border border-border-light text-primary text-center block py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-bg-surface font-bold text-sm"
                   >
                     {t('book_call')}
