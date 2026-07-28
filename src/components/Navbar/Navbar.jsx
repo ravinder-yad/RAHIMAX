@@ -3,7 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { 
   Menu, X, ChevronDown, Search, Sun, Moon, Globe,
   ArrowRight, Phone, Laptop, ShoppingCart, Cpu, 
-  Smartphone, Palette, CheckCircle, Sparkles, BookOpen
+  Smartphone, Palette, CheckCircle, Sparkles, BookOpen,
+  Brain, Download, Video, HelpCircle, FileText, FileSignature, 
+  BarChart2, GraduationCap, DollarSign
 } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 
@@ -136,12 +138,18 @@ const Navbar = () => {
   ];
 
   const resourcesMenuData = [
-    { title: "Blog", desc: "Latest tech and design trends." },
-    { title: "Case Studies", desc: "Detailed engineering breakthroughs." },
-    { title: "Pricing Guide", desc: "Transparent project cost estimators." },
-    { title: "FAQs", desc: "Frequently asked questions answered." },
-    { title: "Free Templates", desc: "Open source boilerplates for developers." },
-    { title: "Documentation", desc: "SaaS API and ERP integrations setup." }
+    { title: "Blog", desc: "Insights, guides, and tech analysis.", path: "/resources/blog", icon: <FileText className="w-4 h-4" /> },
+    { title: "Case Studies", desc: "Real problems. Real solutions.", path: "/resources/case-studies", icon: <BookOpen className="w-4 h-4" /> },
+    { title: "Pricing Guide", desc: "Transparent sheets & estimators.", path: "/resources/pricing-guide", icon: <DollarSign className="w-4 h-4" /> },
+    { title: "FAQs", desc: "Answers to development queries.", path: "/resources/faq", icon: <HelpCircle className="w-4 h-4" /> },
+    { title: "Free Templates", desc: "Vite boilerplates for developers.", path: "/resources/templates", icon: <Cpu className="w-4 h-4" /> },
+    { title: "Documentation", desc: "REST API & auth integrations.", path: "/resources/documentation", icon: <BookOpen className="w-4 h-4" /> },
+    { title: "Tutorials", desc: "Video guides on server setups.", path: "/resources/tutorials", icon: <Video className="w-4 h-4" /> },
+    { title: "Downloads", desc: "Media kit, proposals, logos PDF.", path: "/resources/downloads", icon: <Download className="w-4 h-4" /> },
+    { title: "White Papers", desc: "Future of web automation & AI.", path: "/resources/whitepapers", icon: <FileSignature className="w-4 h-4" /> },
+    { title: "Industry Reports", desc: "Checkout latency analytics logs.", path: "/resources/industry-reports", icon: <BarChart2 className="w-4 h-4" /> },
+    { title: "Learning Center", desc: "Interactive developer roadmaps.", path: "/resources/learning-center", icon: <GraduationCap className="w-4 h-4" /> },
+    { title: "AI Project Planner", desc: "Generate blueprints dynamically.", path: "/resources/ai-planner", icon: <Brain className="w-4 h-4 animate-pulse" /> }
   ];
 
   // Premium Logo Symbol: 36px width & height
@@ -409,7 +417,7 @@ const Navbar = () => {
                 </button>
 
                 {activeMenu === 'resources' && (
-                  <div className={`absolute left-1/2 -translate-x-1/2 w-[850px] bg-white dark:bg-bg-card rounded-[24px] shadow-2xl border border-border-light p-8 grid grid-cols-12 gap-8 animate-fade-in premium-shadow ${
+                  <div className={`absolute left-1/2 -translate-x-1/2 w-[920px] bg-white dark:bg-bg-card rounded-[24px] shadow-2xl border border-border-light p-8 grid grid-cols-12 gap-8 animate-fade-in premium-shadow ${
                     isScrolled ? 'top-[88px]' : 'top-[124px]'
                   }`}>
                     {/* Left Side: Resources lists */}
@@ -417,15 +425,15 @@ const Navbar = () => {
                       <h4 className="font-heading font-extrabold text-[10px] text-primary uppercase tracking-wider border-b border-border-light pb-2">
                         Resources Directory
                       </h4>
-                      <div className="grid grid-cols-2 gap-4 normal-case tracking-normal">
+                      <div className="grid grid-cols-2 gap-4 normal-case tracking-normal max-h-[380px] overflow-y-auto pr-2">
                         {resourcesMenuData.map((item, idx) => (
                           <Link 
                             key={idx}
-                            to={item.title === 'Blog' ? '/blog' : `/pricing`}
+                            to={item.path}
                             className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-bg-surface transition-colors group"
                           >
-                            <div className="p-2 rounded-lg bg-blue-50 dark:bg-primary/10 group-hover:bg-blue-100 transition-colors mt-0.5 text-secondary">
-                              <BookOpen className="w-4 h-4" />
+                            <div className="p-2 rounded-lg bg-blue-50 dark:bg-primary/10 group-hover:bg-blue-100 transition-colors mt-0.5 text-secondary shrink-0">
+                              {item.icon}
                             </div>
                             <div>
                               <h5 className="font-heading font-bold text-xs text-primary group-hover:text-secondary transition-colors">
@@ -443,16 +451,16 @@ const Navbar = () => {
                     {/* Right Side: Featured article */}
                     <div className="col-span-4 bg-slate-50 dark:bg-bg-surface border border-border-light rounded-2xl p-5 flex flex-col justify-between normal-case tracking-normal">
                       <div>
-                        <span className="text-[9px] bg-amber-50 dark:bg-primary/10 text-accent px-2.5 py-1 rounded font-extrabold uppercase tracking-wider">{t('popular')}</span>
+                        <span className="text-[9px] bg-amber-50 dark:bg-primary/10 text-accent px-2.5 py-1 rounded font-extrabold uppercase tracking-wider">Featured Resource</span>
                         <h4 className="font-heading font-bold text-sm text-primary mt-3 leading-snug">
-                          Why Custom React Code Beats Builders
+                          2026 Web Development Guide
                         </h4>
-                        <p className="text-text-gray text-[11px] mt-1 leading-relaxed font-body">
-                          A tech analysis detailing performance load boosts using clean React & Tailwind CSS.
+                        <p className="text-text-gray text-[10px] mt-1.5 leading-relaxed font-body">
+                          A comprehensive handbook on engineering premium React apps with tailwind styles.
                         </p>
                       </div>
-                      <Link to="/blog" className="text-xs text-secondary font-bold flex items-center gap-1 hover:underline mt-4">
-                        <span>Read Article</span>
+                      <Link to="/resources/blog" className="text-xs text-secondary font-bold flex items-center gap-1 hover:underline mt-4">
+                        <span>Read Now</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
@@ -563,10 +571,11 @@ const Navbar = () => {
               <div className="flex flex-col space-y-4 font-semibold text-base">
                 <Link to="/" className="hover:text-secondary transition-colors py-2 border-b border-slate-100 dark:border-border-light">{t('home')}</Link>
                 <Link to="/services" className="hover:text-secondary transition-colors py-2 border-b border-slate-100 dark:border-border-light">{t('services')}</Link>
+                <Link to="/solutions" className="hover:text-secondary transition-colors py-2 border-b border-slate-100 dark:border-border-light">{t('solutions')}</Link>
                 <Link to="/portfolio" className="hover:text-secondary transition-colors py-2 border-b border-slate-100 dark:border-border-light">{t('portfolio')}</Link>
                 <Link to="/pricing" className="hover:text-secondary transition-colors py-2 border-b border-slate-100 dark:border-border-light">{t('pricing')}</Link>
+                <Link to="/resources" className="hover:text-secondary transition-colors py-2 border-b border-slate-100 dark:border-border-light">{t('resources')}</Link>
                 <Link to="/about" className="hover:text-secondary transition-colors py-2 border-b border-slate-100 dark:border-border-light">{t('about')}</Link>
-                <Link to="/blog" className="hover:text-secondary transition-colors py-2 border-b border-slate-100 dark:border-border-light">{t('blog')}</Link>
                 <Link to="/contact" className="hover:text-secondary transition-colors py-2 border-b border-slate-100 dark:border-border-light">{t('contact')}</Link>
                 
                 <div className="pt-6 space-y-3 font-body">

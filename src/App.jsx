@@ -36,6 +36,21 @@ import AgricultureSolution from './pages/Solutions/agriculture';
 import LegalSolution from './pages/Solutions/legal';
 import AgencySolution from './pages/Solutions/agency';
 
+// Resources pages
+import ResourcesCatalog from './pages/Resources';
+import ResBlog from './pages/Resources/Blog';
+import CaseStudies from './pages/Resources/CaseStudies';
+import PricingGuide from './pages/Resources/PricingGuide';
+import FAQPage from './pages/Resources/FAQPage';
+import Templates from './pages/Resources/Templates';
+import Documentation from './pages/Resources/Documentation';
+import Tutorials from './pages/Resources/Tutorials';
+import Downloads from './pages/Resources/Downloads';
+import WhitePapers from './pages/Resources/WhitePapers';
+import IndustryReports from './pages/Resources/IndustryReports';
+import LearningCenter from './pages/Resources/LearningCenter';
+import AIProjectPlanner from './pages/Resources/AIProjectPlanner';
+
 const App = () => {
   return (
     <Router>
@@ -64,6 +79,21 @@ const App = () => {
           <Route path="solutions/agriculture" element={<AgricultureSolution />} />
           <Route path="solutions/legal" element={<LegalSolution />} />
           <Route path="solutions/agency" element={<AgencySolution />} />
+
+          {/* Resources catalog subpages */}
+          <Route path="resources" element={<ResourcesCatalog />} />
+          <Route path="resources/blog" element={<ResBlog />} />
+          <Route path="resources/case-studies" element={<CaseStudies />} />
+          <Route path="resources/pricing-guide" element={<PricingGuide />} />
+          <Route path="resources/faq" element={<FAQPage />} />
+          <Route path="resources/templates" element={<Templates />} />
+          <Route path="resources/documentation" element={<Documentation />} />
+          <Route path="resources/tutorials" element={<Tutorials />} />
+          <Route path="resources/downloads" element={<Downloads />} />
+          <Route path="resources/whitepapers" element={<WhitePapers />} />
+          <Route path="resources/industry-reports" element={<IndustryReports />} />
+          <Route path="resources/learning-center" element={<LearningCenter />} />
+          <Route path="resources/ai-planner" element={<AIProjectPlanner />} />
 
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="pricing" element={<Pricing />} />
