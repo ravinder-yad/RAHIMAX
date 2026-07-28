@@ -377,27 +377,34 @@ const About = () => {
         </div>
       </section>
 
-      {/* ④ Core Values as a Glassmorphic Grid */}
-      <section className="py-24 bg-bg-light dark:bg-slate-950 text-left border-b border-border-light dark:border-zinc-800 px-6">
-        <div className="max-w-7xl mx-auto">
+      {/* ④ Core Values (Redesigned with Premium details) */}
+      <section className="py-24 bg-bg-light dark:bg-slate-950 text-left border-b border-border-light dark:border-zinc-800 px-6 relative">
+        
+        {/* Soft background mesh glows */}
+        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-secondary/5 dark:bg-secondary/10 blur-[100px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 px-3 py-1 bg-secondary/10 rounded-full inline-block border border-secondary/20">
               Core Principles
             </span>
-            <h2 className="text-primary dark:text-white font-heading font-extrabold text-2xl md:text-3xl leading-tight">
+            <h2 className="text-primary dark:text-white font-heading font-black text-3xl md:text-4xl leading-tight">
               Our Core Values
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((item, idx) => (
-              <div key={idx} className="p-6 bg-bg-card border border-border-light dark:bg-zinc-900/30 dark:border-zinc-800/80 rounded-2xl shadow-sm hover:border-secondary/20 transition-all duration-300 flex flex-col justify-between h-[155px] hover:-translate-y-1">
-                <div className="w-10 h-10 rounded-xl bg-slate-50 dark:bg-zinc-850 flex items-center justify-center mb-3">
+              <div key={idx} className="p-7 bg-white/70 dark:bg-zinc-900/30 backdrop-blur-md border border-slate-100 dark:border-zinc-800/80 rounded-3xl shadow-sm hover:shadow-lg hover:border-secondary/35 dark:hover:border-blue-500/35 transition-all duration-300 flex flex-col justify-between h-[190px] hover:-translate-y-1.5 relative overflow-hidden group">
+                {/* Visual hover border line */}
+                <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                
+                <div className="w-12 h-12 rounded-2xl bg-secondary/5 dark:bg-zinc-800 flex items-center justify-center mb-4 text-secondary dark:text-blue-400 border border-secondary/10 dark:border-zinc-700/50">
                   {item.icon}
                 </div>
                 <div>
-                  <h4 className="font-heading font-extrabold text-xs text-primary dark:text-white">{item.title}</h4>
-                  <p className="text-text-gray dark:text-zinc-400 text-[10px] font-body mt-1 leading-normal line-clamp-2">{item.desc}</p>
+                  <h4 className="font-heading font-black text-sm text-primary dark:text-white mb-2">{item.title}</h4>
+                  <p className="text-text-gray dark:text-zinc-400 text-xs leading-relaxed font-body font-medium">{item.desc}</p>
                 </div>
               </div>
             ))}
