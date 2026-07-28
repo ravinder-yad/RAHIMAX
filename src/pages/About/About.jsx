@@ -56,10 +56,10 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: "2026", title: "Rahimax Founded", desc: "Launched to fill the market gap for high-performance React web codes and custom ERP systems." },
-    { year: "2026", title: "First Custom Portal", desc: "Delivered Apollo Clinic schedules system, cutting patient wait queues by 65%." },
-    { year: "2026", title: "50+ Successful Projects", desc: "Scaled operations across e-commerce storefronts, schools databases, and HRMS panels." },
-    { year: "2026", title: "Global Client Expansion", desc: "Serving business clients in India, USA, and GCC region with scalable secure architectures." }
+    { year: "2026", title: "Rahimax Founded", desc: "Launched to fill the market gap for high-performance React web codes and custom ERP systems.", icon: <Sparkles className="w-4 h-4 text-amber-500" /> },
+    { year: "2026", title: "First Custom Portal", desc: "Delivered Apollo Clinic schedules system, cutting patient wait queues by 65%.", icon: <Target className="w-4 h-4 text-blue-500" /> },
+    { year: "2026", title: "50+ Successful Projects", desc: "Scaled operations across e-commerce storefronts, schools databases, and HRMS panels.", icon: <Award className="w-4 h-4 text-indigo-550" /> },
+    { year: "2026", title: "Global Client Expansion", desc: "Serving business clients in India, USA, and GCC region with scalable secure architectures.", icon: <Globe className="w-4 h-4 text-emerald-500" /> }
   ];
 
   return (
@@ -412,30 +412,52 @@ const About = () => {
         </div>
       </section>
 
-      {/* ⑤ Company Journey Timeline (Visual and এनिमेटेड) */}
+      {/* ⑤ Company Journey Timeline (Visual and Animated) */}
       <section className="py-24 bg-bg-surface dark:bg-slate-900 text-left border-b border-border-light dark:border-zinc-800 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 px-3 py-1 bg-secondary/10 rounded-full inline-block border border-secondary/20">
               Milestones
             </span>
-            <h2 className="text-primary dark:text-white font-heading font-extrabold text-2xl md:text-3xl leading-tight">
+            <h2 className="text-primary dark:text-white font-heading font-black text-3xl md:text-4xl leading-tight">
               Company Journey
             </h2>
           </div>
 
           {/* Timeline track */}
-          <div className="relative border-l-2 border-border-light dark:border-zinc-800 ml-4 md:ml-32 space-y-12">
+          <div className="relative border-l-2 border-border-light dark:border-zinc-800 ml-4 md:ml-36 space-y-12">
             {milestones.map((m, idx) => (
-              <div key={idx} className="relative pl-8 md:pl-10 group">
-                {/* Year tag with nice glowing dots */}
-                <div className="absolute left-0 -translate-x-[50%] -translate-y-[-2px] bg-secondary text-white font-heading font-black text-[9px] px-2.5 py-0.5 rounded-full z-10 border-4 border-bg-surface dark:border-slate-900 group-hover:scale-105 transition-transform duration-300">
-                  {m.year}
+              <div key={idx} className="relative pl-8 md:pl-12 group">
+                
+                {/* Visual Connector Node */}
+                <div className="absolute left-0 -translate-x-[50%] top-1.5 w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border-2 border-secondary/40 dark:border-zinc-700 flex items-center justify-center z-10 group-hover:border-secondary transition-colors duration-300">
+                  {m.icon}
                 </div>
-                <div>
-                  <h4 className="font-heading font-extrabold text-xs md:text-sm text-primary dark:text-white group-hover:text-secondary transition-colors">{m.title}</h4>
-                  <p className="text-text-gray dark:text-zinc-400 font-body text-[11px] md:text-xs mt-1.5 max-w-lg leading-relaxed">{m.desc}</p>
+
+                {/* Left side year indicator (hidden on mobile, visible on md+) */}
+                <div className="hidden md:block absolute right-full mr-8 top-2 text-right">
+                  <span className="font-heading font-black text-sm text-secondary dark:text-blue-400 bg-secondary/10 dark:bg-blue-500/10 px-3 py-1 rounded-full border border-secondary/20 shadow-sm">
+                    {m.year}
+                  </span>
                 </div>
+
+                {/* Mobile Year Badge (visible on mobile, hidden on md+) */}
+                <div className="md:hidden mb-2 inline-block">
+                  <span className="font-heading font-black text-[9px] text-secondary dark:text-blue-400 bg-secondary/10 dark:bg-blue-500/10 px-2.5 py-0.5 rounded-full border border-secondary/20">
+                    {m.year}
+                  </span>
+                </div>
+
+                {/* Card Container */}
+                <div className="bg-white/60 dark:bg-zinc-900/30 border border-slate-100 dark:border-zinc-800/80 p-6 rounded-3xl shadow-sm hover:shadow-md hover:border-secondary/30 dark:hover:border-blue-500/30 transition-all duration-300">
+                  <h4 className="font-heading font-black text-sm text-primary dark:text-white group-hover:text-secondary dark:group-hover:text-blue-400 transition-colors">
+                    {m.title}
+                  </h4>
+                  <p className="text-text-gray dark:text-zinc-400 font-body text-xs mt-2 leading-relaxed font-medium">
+                    {m.desc}
+                  </p>
+                </div>
+
               </div>
             ))}
           </div>
