@@ -212,31 +212,65 @@ const About = () => {
         </div>
       </section>
 
-      {/* ③ Mission & Vision */}
-      <section className="py-20 bg-bg-light dark:bg-slate-950 text-left border-b border-border-light dark:border-zinc-800 px-6">
+      {/* ③ Mission & Vision (Redesigned with Premium details) */}
+      <section className="py-24 bg-bg-light dark:bg-slate-950 text-left border-b border-border-light dark:border-zinc-800 px-6 relative">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           
-          <div className="bg-bg-card border border-border-light/75 dark:bg-zinc-900/50 dark:border-zinc-800 p-8 rounded-[28px] shadow-sm flex items-start gap-4 hover:border-secondary/20 transition-all duration-300">
-            <div className="p-3.5 rounded-xl bg-secondary/10 text-secondary shrink-0">
+          {/* Mission Card */}
+          <div className="bg-bg-card border border-border-light/75 dark:bg-zinc-900/50 dark:border-zinc-800 p-8 rounded-[28px] shadow-lg flex flex-col sm:flex-row items-start gap-5 hover:border-secondary/35 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="w-12 h-12 rounded-2xl bg-secondary/10 dark:bg-blue-500/10 border border-secondary/20 text-secondary dark:text-blue-400 flex items-center justify-center shrink-0">
               <Target className="w-6 h-6" />
             </div>
-            <div>
-              <h3 className="font-heading font-extrabold text-sm text-primary dark:text-white mb-2 uppercase tracking-wider">Our Mission</h3>
-              <p className="text-text-gray dark:text-zinc-400 font-body text-xs leading-relaxed">
-                Deliver premium, high-speed digital solutions that help startups automate processes, secure user databases, and scale their conversions.
+            <div className="space-y-3">
+              <h3 className="font-heading font-black text-sm text-primary dark:text-white uppercase tracking-wider">
+                Our Mission
+              </h3>
+              <p className="text-primary dark:text-zinc-200 font-bold text-xs">
+                Empowering brands with high-performance operational systems.
               </p>
+              <p className="text-text-gray dark:text-zinc-400 font-body text-xs leading-relaxed">
+                Deliver premium digital solutions that automate processes, secure user databases, and scale conversion targets.
+              </p>
+              <ul className="space-y-2 pt-2 border-t border-border-light dark:border-zinc-800">
+                <li className="flex items-center gap-2 text-[10px] text-text-gray dark:text-zinc-400 font-bold">
+                  <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Loading speeds under 1.5 seconds</span>
+                </li>
+                <li className="flex items-center gap-2 text-[10px] text-text-gray dark:text-zinc-400 font-bold">
+                  <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Secure double-access authorization</span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <div className="bg-bg-card border border-border-light/75 dark:bg-zinc-900/50 dark:border-zinc-800 p-8 rounded-[28px] shadow-sm flex items-start gap-4 hover:border-secondary/20 transition-all duration-300">
-            <div className="p-3.5 rounded-xl bg-secondary/10 text-secondary shrink-0">
+          {/* Vision Card */}
+          <div className="bg-bg-card border border-border-light/75 dark:bg-zinc-900/50 dark:border-zinc-800 p-8 rounded-[28px] shadow-lg flex flex-col sm:flex-row items-start gap-5 hover:border-secondary/35 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="w-12 h-12 rounded-2xl bg-secondary/10 dark:bg-indigo-500/10 border border-secondary/20 text-secondary dark:text-indigo-400 flex items-center justify-center shrink-0">
               <Eye className="w-6 h-6" />
             </div>
-            <div>
-              <h3 className="font-heading font-extrabold text-sm text-primary dark:text-white mb-2 uppercase tracking-wider">Our Vision</h3>
-              <p className="text-text-gray dark:text-zinc-400 font-body text-xs leading-relaxed">
-                To become one of the most trusted technology companies in India, engineering high-grade web platforms with Apple-level design aesthetics.
+            <div className="space-y-3">
+              <h3 className="font-heading font-black text-sm text-primary dark:text-white uppercase tracking-wider">
+                Our Vision
+              </h3>
+              <p className="text-primary dark:text-zinc-200 font-bold text-xs">
+                Setting the digital engineering standard in India.
               </p>
+              <p className="text-text-gray dark:text-zinc-400 font-body text-xs leading-relaxed">
+                To become one of the most trusted technology companies, engineering high-grade web platforms with Apple-level simplicity.
+              </p>
+              <ul className="space-y-2 pt-2 border-t border-border-light dark:border-zinc-800">
+                <li className="flex items-center gap-2 text-[10px] text-text-gray dark:text-zinc-400 font-bold">
+                  <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Bespoke custom coding frameworks</span>
+                </li>
+                <li className="flex items-center gap-2 text-[10px] text-text-gray dark:text-zinc-400 font-bold">
+                  <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Establishing long-term customer trust</span>
+                </li>
+              </ul>
             </div>
           </div>
 
