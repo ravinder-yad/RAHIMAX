@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { 
   Check, ArrowRight, ShieldCheck, Sparkles, Code2, Users, 
-  Award, Heart, Target, Eye, Globe, X, Plus
+  Award, Heart, Target, Eye, Globe, X, Plus, Database, Cloud
 } from 'lucide-react';
 
 const About = () => {
@@ -608,50 +608,87 @@ const About = () => {
       </section>
 
       {/* ⑨ Technology Stack */}
-      <section className="py-24 bg-bg-surface dark:bg-slate-900 px-6 text-left border-b border-border-light dark:border-zinc-800">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 bg-bg-surface dark:bg-slate-900 px-6 text-left border-b border-border-light dark:border-zinc-800 relative">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 px-3 py-1 bg-secondary/10 rounded-full inline-block border border-secondary/20">
               Tech Stack
             </span>
-            <h2 className="text-primary dark:text-white font-heading font-extrabold text-2xl md:text-3xl leading-tight">
+            <h2 className="text-primary dark:text-white font-heading font-black text-3xl md:text-4xl leading-tight">
               Technologies We Use
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto text-xs font-semibold text-text-gray dark:text-zinc-400">
-            <div className="bg-bg-card border border-border-light dark:bg-zinc-900/60 dark:border-zinc-800 p-6 rounded-2xl">
-              <h4 className="font-heading font-bold text-xs text-primary dark:text-white border-b border-border-light dark:border-zinc-800 pb-2 mb-4">Frontend</h4>
-              <div className="flex flex-wrap gap-1.5">
-                {["React.js", "Next.js", "Tailwind CSS", "Material UI", "Redux"].map(t => (
-                  <span key={t} className="bg-bg-light dark:bg-zinc-800 text-text-gray dark:text-zinc-300 px-2.5 py-1 border border-border-light dark:border-zinc-700 rounded">{t}</span>
-                ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            
+            {/* Frontend Category */}
+            <div className="bg-white/70 dark:bg-zinc-900/60 border border-slate-100 dark:border-zinc-800 p-6 rounded-[28px] shadow-sm hover:shadow-lg hover:border-secondary/20 transition-all duration-300 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div className="flex items-center gap-3 border-b border-border-light dark:border-zinc-800 pb-3 mb-4">
+                  <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500 dark:text-blue-400">
+                    <Code2 className="w-5 h-5" />
+                  </div>
+                  <h4 className="font-heading font-black text-xs text-primary dark:text-white uppercase tracking-wider">Frontend</h4>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {["React.js (19)", "Next.js", "Vite.js", "Tailwind CSS", "TypeScript", "Redux Toolkit", "Framer Motion", "Material UI", "HTML5 & CSS3"].map(t => (
+                    <span key={t} className="bg-bg-light dark:bg-zinc-800/80 text-text-gray dark:text-zinc-300 text-[10px] font-semibold px-2.5 py-1.5 border border-border-light dark:border-zinc-700/65 rounded-xl hover:bg-secondary/5 dark:hover:bg-blue-500/10 hover:text-secondary dark:hover:text-blue-400 hover:border-secondary/20 transition-all">{t}</span>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="bg-bg-card border border-border-light dark:bg-zinc-900/60 dark:border-zinc-800 p-6 rounded-2xl">
-              <h4 className="font-heading font-bold text-xs text-primary dark:text-white border-b border-border-light dark:border-zinc-800 pb-2 mb-4">Backend</h4>
-              <div className="flex flex-wrap gap-1.5">
-                {["Node.js", "Express.js", "REST APIs", "WebSockets"].map(t => (
-                  <span key={t} className="bg-bg-light dark:bg-zinc-800 text-text-gray dark:text-zinc-300 px-2.5 py-1 border border-border-light dark:border-zinc-700 rounded">{t}</span>
-                ))}
+
+            {/* Backend Category */}
+            <div className="bg-white/70 dark:bg-zinc-900/60 border border-slate-100 dark:border-zinc-800 p-6 rounded-[28px] shadow-sm hover:shadow-lg hover:border-secondary/20 transition-all duration-300 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div className="flex items-center gap-3 border-b border-border-light dark:border-zinc-800 pb-3 mb-4">
+                  <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-500 dark:text-indigo-400">
+                    <Target className="w-5 h-5" />
+                  </div>
+                  <h4 className="font-heading font-black text-xs text-primary dark:text-white uppercase tracking-wider">Backend</h4>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {["Node.js", "Express.js", "RESTful APIs", "GraphQL APIs", "WebSockets", "JWT Cryptography", "Microservices", "Python FastAPI"].map(t => (
+                    <span key={t} className="bg-bg-light dark:bg-zinc-800/80 text-text-gray dark:text-zinc-300 text-[10px] font-semibold px-2.5 py-1.5 border border-border-light dark:border-zinc-700/65 rounded-xl hover:bg-secondary/5 dark:hover:bg-blue-500/10 hover:text-secondary dark:hover:text-blue-400 hover:border-secondary/20 transition-all">{t}</span>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="bg-bg-card border border-border-light dark:bg-zinc-900/60 dark:border-zinc-800 p-6 rounded-2xl">
-              <h4 className="font-heading font-bold text-xs text-primary dark:text-white border-b border-border-light dark:border-zinc-800 pb-2 mb-4">Databases</h4>
-              <div className="flex flex-wrap gap-1.5">
-                {["MongoDB", "PostgreSQL", "Firebase", "SQLite"].map(t => (
-                  <span key={t} className="bg-bg-light dark:bg-zinc-800 text-text-gray dark:text-zinc-300 px-2.5 py-1 border border-border-light dark:border-zinc-700 rounded">{t}</span>
-                ))}
+
+            {/* Database Category */}
+            <div className="bg-white/70 dark:bg-zinc-900/60 border border-slate-100 dark:border-zinc-800 p-6 rounded-[28px] shadow-sm hover:shadow-lg hover:border-secondary/20 transition-all duration-300 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div className="flex items-center gap-3 border-b border-border-light dark:border-zinc-800 pb-3 mb-4">
+                  <div className="p-2 rounded-lg bg-purple-500/10 text-purple-500 dark:text-purple-400">
+                    <Database className="w-5 h-5" />
+                  </div>
+                  <h4 className="font-heading font-black text-xs text-primary dark:text-white uppercase tracking-wider">Databases</h4>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {["MongoDB", "PostgreSQL", "Mongoose ODM", "Prisma ORM", "Redis Cache", "MySQL", "SQLite", "Firebase DB"].map(t => (
+                    <span key={t} className="bg-bg-light dark:bg-zinc-800/80 text-text-gray dark:text-zinc-300 text-[10px] font-semibold px-2.5 py-1.5 border border-border-light dark:border-zinc-700/65 rounded-xl hover:bg-secondary/5 dark:hover:bg-blue-500/10 hover:text-secondary dark:hover:text-blue-400 hover:border-secondary/20 transition-all">{t}</span>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="bg-bg-card border border-border-light dark:bg-zinc-900/60 dark:border-zinc-800 p-6 rounded-2xl">
-              <h4 className="font-heading font-bold text-xs text-primary dark:text-white border-b border-border-light dark:border-zinc-800 pb-2 mb-4">Cloud & Staging</h4>
-              <div className="flex flex-wrap gap-1.5">
-                {["AWS EC2", "Vercel", "Cloudflare CDN", "GitHub CI/CD"].map(t => (
-                  <span key={t} className="bg-bg-light dark:bg-zinc-800 text-text-gray dark:text-zinc-300 px-2.5 py-1 border border-border-light dark:border-zinc-700 rounded">{t}</span>
-                ))}
+
+            {/* Cloud & Staging Category */}
+            <div className="bg-white/70 dark:bg-zinc-900/60 border border-slate-100 dark:border-zinc-800 p-6 rounded-[28px] shadow-sm hover:shadow-lg hover:border-secondary/20 transition-all duration-300 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div className="flex items-center gap-3 border-b border-border-light dark:border-zinc-800 pb-3 mb-4">
+                  <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 dark:text-emerald-400">
+                    <Cloud className="w-5 h-5" />
+                  </div>
+                  <h4 className="font-heading font-black text-xs text-primary dark:text-white uppercase tracking-wider">Cloud & Staging</h4>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {["AWS EC2 / S3", "Vercel Deploy", "Netlify", "Cloudflare CDN", "GitHub CI/CD", "Docker Containers", "PM2 Manager", "Nginx Proxy"].map(t => (
+                    <span key={t} className="bg-bg-light dark:bg-zinc-800/80 text-text-gray dark:text-zinc-300 text-[10px] font-semibold px-2.5 py-1.5 border border-border-light dark:border-zinc-700/65 rounded-xl hover:bg-secondary/5 dark:hover:bg-blue-500/10 hover:text-secondary dark:hover:text-blue-400 hover:border-secondary/20 transition-all">{t}</span>
+                  ))}
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
