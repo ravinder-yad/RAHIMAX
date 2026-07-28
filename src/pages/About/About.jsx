@@ -33,24 +33,21 @@ const About = () => {
       name: "Ravinder",
       role: "Founder & Full Stack Developer",
       bio: "Architects client backend portals, designs optimized Mongo databases, and deploys scalable secure server frameworks.",
-      initials: "RY",
-      grad: "from-blue-500 to-indigo-600",
+      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=80",
       socials: { github: "#", twitter: "#", linkedin: "#" }
     },
     {
       name: "Himesh",
       role: "Co-Founder & UI/UX Director",
       bio: "Frontend specialist crafting premium React user interfaces. Focused on responsive layouts and CSS animations.",
-      initials: "HD",
-      grad: "from-indigo-500 to-purple-600",
+      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=400&q=80",
       socials: { github: "#", twitter: "#", linkedin: "#" }
     },
     {
       name: "Mayant",
       role: "Co-Founder & Lead Systems Architect",
       bio: "Designs secure logins, handles REST API integrations, and optimizes high-performance AWS configurations.",
-      initials: "MD",
-      grad: "from-purple-500 to-pink-650",
+      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&h=400&q=80",
       socials: { github: "#", twitter: "#", linkedin: "#" }
     }
   ];
@@ -505,41 +502,53 @@ const About = () => {
         </div>
       </section>
 
-      {/* ⑦ Meet Our Team with Premium radial Avatar cards */}
+      {/* ⑦ Meet Our Team with Premium Portrait cards */}
       <section className="py-24 bg-bg-surface dark:bg-slate-900 text-left border-b border-border-light dark:border-zinc-800 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-secondary text-[10px] uppercase tracking-[0.2em] font-extrabold mb-3 px-3 py-1 bg-secondary/10 rounded-full inline-block border border-secondary/20">
               Architects
             </span>
-            <h2 className="text-primary dark:text-white font-heading font-extrabold text-2xl md:text-3xl leading-tight">
+            <h2 className="text-primary dark:text-white font-heading font-black text-3xl md:text-4xl leading-tight">
               Meet Our Team
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {team.map((member, idx) => (
-              <div key={idx} className="group bg-bg-card border border-border-light dark:bg-zinc-900/60 dark:border-zinc-800 p-6 rounded-[28px] shadow-lg hover:border-secondary/30 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-[320px]">
-                <div>
-                  <div className={`w-12 h-12 bg-gradient-to-br ${member.grad} rounded-xl flex items-center justify-center font-heading font-black text-white text-sm mb-4`}>
-                    {member.initials}
-                  </div>
-                  <h4 className="font-heading font-extrabold text-sm text-primary dark:text-white group-hover:text-secondary transition-colors duration-300">
-                    {member.name}
-                  </h4>
-                  <span className="text-[9px] text-secondary font-extrabold block mt-1 uppercase tracking-wider">
-                    {member.role}
-                  </span>
-                  <p className="text-text-gray dark:text-zinc-400 text-[10px] font-body mt-3.5 leading-relaxed">
-                    {member.bio}
-                  </p>
+              <div key={idx} className="group bg-white dark:bg-zinc-900/60 border border-border-light dark:border-zinc-800 rounded-[32px] shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between h-[450px] hover:-translate-y-1">
+                
+                {/* Photo container */}
+                <div className="h-[240px] w-full overflow-hidden relative">
+                  <img 
+                    src={member.img} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
-                <div className="flex gap-3 border-t border-border-light dark:border-zinc-800 pt-4">
-                  <a href={member.socials.github} className="text-text-gray dark:text-zinc-500 hover:text-secondary dark:hover:text-white transition-colors"><Github className="w-4.5 h-4.5" /></a>
-                  <a href={member.socials.twitter} className="text-text-gray dark:text-zinc-500 hover:text-secondary dark:hover:text-white transition-colors"><Twitter className="w-4.5 h-4.5" /></a>
-                  <a href={member.socials.linkedin} className="text-text-gray dark:text-zinc-500 hover:text-secondary dark:hover:text-white transition-colors"><Linkedin className="w-4.5 h-4.5" /></a>
+                {/* Content Details */}
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h4 className="font-heading font-black text-base text-primary dark:text-white group-hover:text-secondary dark:group-hover:text-blue-400 transition-colors">
+                      {member.name}
+                    </h4>
+                    <span className="text-[10px] text-secondary font-extrabold block mt-1 uppercase tracking-wider">
+                      {member.role}
+                    </span>
+                    <p className="text-text-gray dark:text-zinc-400 text-[10px] font-body mt-3 leading-relaxed">
+                      {member.bio}
+                    </p>
+                  </div>
+
+                  <div className="flex gap-3 border-t border-border-light dark:border-zinc-800 pt-3 mt-4">
+                    <a href={member.socials.github} className="text-text-gray dark:text-zinc-550 hover:text-secondary dark:hover:text-white transition-colors"><Github className="w-4 h-4" /></a>
+                    <a href={member.socials.twitter} className="text-text-gray dark:text-zinc-550 hover:text-secondary dark:hover:text-white transition-colors"><Twitter className="w-4 h-4" /></a>
+                    <a href={member.socials.linkedin} className="text-text-gray dark:text-zinc-550 hover:text-secondary dark:hover:text-white transition-colors"><Linkedin className="w-4 h-4" /></a>
+                  </div>
                 </div>
+
               </div>
             ))}
           </div>
