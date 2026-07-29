@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Layouts
 import MainLayout from './layouts/MainLayout';
+import ScrollToTop from './components/Common/ScrollToTop';
+import PageLoader from './components/Common/PageLoader';
 
 // Pages
 import Home from './pages/Home/Home';
@@ -57,6 +59,8 @@ import AIProjectPlanner from './pages/Resources/AIProjectPlanner';
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
+      <PageLoader />
       <Routes>
         {/* Main nested layout */}
         <Route path="/" element={<MainLayout />}>

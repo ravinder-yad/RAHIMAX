@@ -78,6 +78,11 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+@keyframes loader {
+  0% { transform: translateX(-100%); }
+  50%, 100% { transform: translateX(220%); }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Sora', sans-serif;
   color: inherit;
@@ -196,4 +201,3 @@ html.lenis {
 a, button {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
