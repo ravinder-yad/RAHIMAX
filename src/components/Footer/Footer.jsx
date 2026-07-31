@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 import { 
   Mail, Phone, MapPin, Send, Laptop, Star, Award, Heart, CheckCircle2, Globe, Clock, Sparkles, ChevronRight, Moon, Sun, Check
 } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Footer = () => {
   const [isDark, setIsDark] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
   const [emailInput, setEmailInput] = useState('');
+  
+  // Import Language Context
+  const { language, setLanguage, t } = useLanguage();
 
   // Check current theme state on mount
   useEffect(() => {
@@ -313,9 +317,19 @@ const Footer = () => {
           {/* Languages Selector */}
           <div className="flex items-center gap-2 border-r border-[#27272A] pr-6">
             <Globe className="w-3.5 h-3.5 text-slate-500" />
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">English</span>
+            <span 
+              onClick={() => setLanguage('EN')} 
+              className={`text-[10px] font-bold uppercase tracking-wider cursor-pointer transition-colors ${language === 'EN' ? 'text-secondary' : 'text-slate-400 hover:text-slate-300'}`}
+            >
+              English
+            </span>
             <span className="text-[9px] text-slate-600 font-bold uppercase">/</span>
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Hindi</span>
+            <span 
+              onClick={() => setLanguage('HI')} 
+              className={`text-[10px] font-bold uppercase tracking-wider cursor-pointer transition-colors ${language === 'HI' ? 'text-secondary' : 'text-slate-400 hover:text-slate-300'}`}
+            >
+              Hindi
+            </span>
             <span className="text-[8px] bg-slate-900 border border-[#27272A] px-1.5 py-0.5 rounded text-slate-500 font-bold ml-1">Beta</span>
           </div>
 
